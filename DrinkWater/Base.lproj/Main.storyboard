@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Data View Controller-->
+        <!--View Controller-->
         <scene sceneID="snT-py-3hH">
             <objects>
-                <viewController storyboardIdentifier="DataViewController" id="S4R-Ja-viH" customClass="DataViewController" customModule="DrinkWater" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DataViewStoryBoard" id="S4R-Ja-viH" customClass="ViewController" customModule="DrinkWater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ZwX-cT-FIQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -21,58 +21,86 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCI-B2-6sP">
                                 <rect key="frame" x="177" y="699" width="60" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="TuH-fe-OG2"/>
+                                    <constraint firstAttribute="height" constant="60" id="29u-8u-mNG"/>
+                                    <constraint firstAttribute="width" constant="60" id="ZGA-BK-mYl"/>
+                                    <constraint firstAttribute="width" secondItem="pCI-B2-6sP" secondAttribute="height" multiplier="1:1" id="xmP-N2-0VR"/>
                                 </constraints>
                                 <state key="normal" image="check"/>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ki7-vJ-do7">
                                 <rect key="frame" x="122" y="832" width="170" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="YhT-Oc-62y"/>
+                                </constraints>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlo-io-RGs">
-                                <rect key="frame" x="79" y="147" width="256" height="256"/>
-                                <state key="normal" backgroundImage="water"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cE-TN-Xiq">
-                                <rect key="frame" x="275" y="574" width="60" height="60"/>
+                                <rect key="frame" x="79" y="149" width="256" height="256"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="2KS-WC-72h"/>
-                                    <constraint firstAttribute="width" constant="60" id="TlK-cf-WCm"/>
+                                    <constraint firstAttribute="height" constant="256" id="6Ev-SF-psG"/>
+                                    <constraint firstAttribute="width" constant="256" id="hZO-oh-8eK"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="plus"/>
+                                <state key="normal" backgroundImage="water"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNd-cl-60o">
                                 <rect key="frame" x="196" y="593" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="B37-MS-clQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gaa-cU-5xf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gaa-cU-5xf">
                                 <rect key="frame" x="79" y="574" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="CSB-tS-0Lu"/>
+                                    <constraint firstAttribute="width" constant="60" id="GzI-bE-gQw"/>
+                                    <constraint firstAttribute="width" secondItem="Gaa-cU-5xf" secondAttribute="height" multiplier="1:1" id="VGH-xC-OZd"/>
+                                </constraints>
                                 <state key="normal" title="-" image="minus"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cE-TN-Xiq">
+                                <rect key="frame" x="275" y="574" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="9nf-l6-eFh"/>
+                                    <constraint firstAttribute="width" secondItem="8cE-TN-Xiq" secondAttribute="height" multiplier="1:1" id="OZ6-qc-AIa"/>
+                                    <constraint firstAttribute="width" constant="60" id="nmL-QH-GW2"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="plus"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.38286047832130565" green="0.79547602728878697" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Ki7-vJ-do7" firstAttribute="leading" secondItem="K9I-jD-KjA" secondAttribute="leading" constant="122" id="0Kn-8R-EVH"/>
-                            <constraint firstItem="8cE-TN-Xiq" firstAttribute="centerY" secondItem="YNd-cl-60o" secondAttribute="centerY" id="4dn-NP-igU"/>
-                            <constraint firstItem="8cE-TN-Xiq" firstAttribute="leading" secondItem="YNd-cl-60o" secondAttribute="trailing" constant="57" id="4iR-MR-7vf"/>
-                            <constraint firstItem="pCI-B2-6sP" firstAttribute="leading" secondItem="K9I-jD-KjA" secondAttribute="leading" constant="177" id="5It-sr-7Mt"/>
-                            <constraint firstItem="Jlo-io-RGs" firstAttribute="centerX" secondItem="ZwX-cT-FIQ" secondAttribute="centerX" id="8dq-W3-a8B"/>
-                            <constraint firstAttribute="bottom" secondItem="pCI-B2-6sP" secondAttribute="bottom" constant="137" id="8or-SC-t8H"/>
-                            <constraint firstItem="Ki7-vJ-do7" firstAttribute="centerX" secondItem="ZwX-cT-FIQ" secondAttribute="centerX" id="BdA-1g-cB1"/>
-                            <constraint firstItem="8cE-TN-Xiq" firstAttribute="trailing" secondItem="Jlo-io-RGs" secondAttribute="trailing" id="CB2-in-GI4"/>
-                            <constraint firstItem="Jlo-io-RGs" firstAttribute="top" secondItem="K9I-jD-KjA" secondAttribute="top" constant="103" id="D02-pZ-drJ"/>
-                            <constraint firstItem="8cE-TN-Xiq" firstAttribute="bottom" secondItem="Gaa-cU-5xf" secondAttribute="bottom" id="G4O-qK-QxM"/>
-                            <constraint firstItem="Gaa-cU-5xf" firstAttribute="top" secondItem="K9I-jD-KjA" secondAttribute="top" constant="530" id="Ofx-o0-2Db"/>
-                            <constraint firstItem="YNd-cl-60o" firstAttribute="centerX" secondItem="ZwX-cT-FIQ" secondAttribute="centerX" id="Sh0-gl-cbb"/>
-                            <constraint firstItem="pCI-B2-6sP" firstAttribute="centerX" secondItem="YNd-cl-60o" secondAttribute="centerX" id="VgZ-Ws-Tpg"/>
-                            <constraint firstItem="8cE-TN-Xiq" firstAttribute="top" secondItem="Gaa-cU-5xf" secondAttribute="top" id="Xha-0C-U5f"/>
-                            <constraint firstItem="pCI-B2-6sP" firstAttribute="top" secondItem="YNd-cl-60o" secondAttribute="bottom" constant="84" id="any-5V-JgB"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="Ki7-vJ-do7" secondAttribute="bottom" constant="-7" id="brd-F9-FkF"/>
-                            <constraint firstItem="Gaa-cU-5xf" firstAttribute="leading" secondItem="K9I-jD-KjA" secondAttribute="leading" constant="79" id="cTe-rA-MuE"/>
+                            <constraint firstItem="Ki7-vJ-do7" firstAttribute="top" secondItem="pCI-B2-6sP" secondAttribute="bottom" constant="73" id="D9A-Pf-cxc"/>
+                            <constraint firstItem="8cE-TN-Xiq" firstAttribute="leading" secondItem="YNd-cl-60o" secondAttribute="trailing" constant="57" id="DRh-ck-LPB"/>
+                            <constraint firstItem="YNd-cl-60o" firstAttribute="centerX" secondItem="Jlo-io-RGs" secondAttribute="centerX" id="Fpe-5B-qxG"/>
+                            <constraint firstItem="Jlo-io-RGs" firstAttribute="leading" secondItem="Gaa-cU-5xf" secondAttribute="leading" id="SsA-yu-SKY"/>
+                            <constraint firstItem="YNd-cl-60o" firstAttribute="centerX" secondItem="ZwX-cT-FIQ" secondAttribute="centerX" id="UF4-JY-fvy"/>
+                            <constraint firstItem="pCI-B2-6sP" firstAttribute="top" secondItem="YNd-cl-60o" secondAttribute="bottom" constant="84" id="Xdo-Dq-E1v"/>
+                            <constraint firstItem="YNd-cl-60o" firstAttribute="centerY" secondItem="Gaa-cU-5xf" secondAttribute="centerY" id="b00-Ya-zZU"/>
+                            <constraint firstItem="K9I-jD-KjA" firstAttribute="bottom" secondItem="8cE-TN-Xiq" secondAttribute="bottom" constant="228" id="d1v-cv-Cf4"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Ki7-vJ-do7" secondAttribute="bottom" constant="-7" id="ddd-ba-hqD"/>
+                            <constraint firstItem="Jlo-io-RGs" firstAttribute="top" secondItem="K9I-jD-KjA" secondAttribute="top" constant="105" id="gah-El-Gmy"/>
+                            <constraint firstItem="Ki7-vJ-do7" firstAttribute="leading" secondItem="K9I-jD-KjA" secondAttribute="leading" constant="122" id="hqz-hA-Yma"/>
+                            <constraint firstItem="K9I-jD-KjA" firstAttribute="trailing" secondItem="8cE-TN-Xiq" secondAttribute="trailing" constant="79" id="oNK-v6-ooM"/>
+                            <constraint firstItem="YNd-cl-60o" firstAttribute="centerX" secondItem="pCI-B2-6sP" secondAttribute="centerX" id="pg9-Cq-Fmh"/>
+                            <constraint firstItem="8cE-TN-Xiq" firstAttribute="leading" secondItem="Gaa-cU-5xf" secondAttribute="trailing" constant="136" id="rcu-qf-Euf"/>
+                            <constraint firstItem="Jlo-io-RGs" firstAttribute="leading" secondItem="K9I-jD-KjA" secondAttribute="leading" constant="79" id="ryE-ND-2HD"/>
+                            <constraint firstItem="YNd-cl-60o" firstAttribute="centerX" secondItem="Ki7-vJ-do7" secondAttribute="centerX" id="udB-np-3Ds"/>
+                            <constraint firstItem="8cE-TN-Xiq" firstAttribute="top" secondItem="ZwX-cT-FIQ" secondAttribute="topMargin" constant="530" id="wGE-Ma-YsG"/>
+                            <constraint firstItem="YNd-cl-60o" firstAttribute="centerY" secondItem="8cE-TN-Xiq" secondAttribute="centerY" id="wQt-6b-4QY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K9I-jD-KjA"/>
                     </view>
+                    <connections>
+                        <outlet property="backgroundUIView" destination="ZwX-cT-FIQ" id="gpI-2C-95l"/>
+                        <outlet property="confirmAddBtn" destination="pCI-B2-6sP" id="CNg-pH-sfQ"/>
+                        <outlet property="currentWaterVolumeLabel" destination="wQt-6b-4QY" id="WWE-as-yAd"/>
+                        <outlet property="minusBtn" destination="Gaa-cU-5xf" id="lXp-VL-3Mc"/>
+                        <outlet property="plusBtn" destination="8cE-TN-Xiq" id="oUx-Bv-E9B"/>
+                        <outlet property="volumeOfWaterAddingLabel" destination="YNd-cl-60o" id="hU8-B9-fDp"/>
+                        <outlet property="waterBottleBtn" destination="Jlo-io-RGs" id="NbR-eH-L7L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmD-Rr-ZGN" sceneMemberID="firstResponder"/>
             </objects>

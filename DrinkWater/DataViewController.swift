@@ -8,12 +8,20 @@
 
 import UIKit
 
-class DataViewController: UIViewController {
+class ViewController: UIViewController {
+    @IBOutlet var backgroundImageView: UIView!
 
-    @IBOutlet weak var dataLabel: UILabel!
+    @IBOutlet weak var bottleIcon: UIButton!
+    @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var amountOfWaterAddedLabel: UILabel!
+    @IBOutlet weak var addButton: UIButton!
+
+    @IBOutlet weak var minusButton: UIButton!
+
+    
     var dataObject: String = ""
 
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -21,7 +29,6 @@ class DataViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.dataLabel!.text = dataObject
     }
 
 
