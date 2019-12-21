@@ -25,6 +25,9 @@
                                     <constraint firstAttribute="width" secondItem="pCI-B2-6sP" secondAttribute="height" multiplier="1:1" id="8DK-gD-7gZ"/>
                                 </constraints>
                                 <state key="normal" image="check"/>
+                                <connections>
+                                    <action selector="addIntoBottleBtn:" destination="S4R-Ja-viH" eventType="touchUpInside" id="YoC-gW-Ifk"/>
+                                </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ki7-vJ-do7">
                                 <rect key="frame" x="122" y="832" width="170" height="37"/>
@@ -40,17 +43,6 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="water"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNd-cl-60o">
-                                <rect key="frame" x="196.5" y="593" width="21" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="B37-MS-clQ"/>
-                                    <constraint firstAttribute="width" secondItem="YNd-cl-60o" secondAttribute="height" multiplier="21:22" id="G0V-A4-NQ1"/>
-                                    <constraint firstAttribute="width" secondItem="YNd-cl-60o" secondAttribute="height" multiplier="21:22" id="yxs-1x-GXc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gaa-cU-5xf">
                                 <rect key="frame" x="79" y="574" width="60" height="60"/>
                                 <constraints>
@@ -58,6 +50,9 @@
                                     <constraint firstAttribute="width" secondItem="Gaa-cU-5xf" secondAttribute="height" multiplier="1:1" id="fbU-BJ-ieo"/>
                                 </constraints>
                                 <state key="normal" title="-" image="minus"/>
+                                <connections>
+                                    <action selector="removeWaterBtn:" destination="S4R-Ja-viH" eventType="touchUpInside" id="KLU-VZ-2ov"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cE-TN-Xiq">
                                 <rect key="frame" x="275" y="574" width="60" height="60"/>
@@ -65,30 +60,44 @@
                                     <constraint firstAttribute="width" secondItem="8cE-TN-Xiq" secondAttribute="height" multiplier="1:1" id="sbN-cy-HD5"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="plus"/>
+                                <connections>
+                                    <action selector="addWaterBtn:" destination="S4R-Ja-viH" eventType="touchUpInside" id="nTJ-jT-drO"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNd-cl-60o">
+                                <rect key="frame" x="162" y="574" width="90" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="B37-MS-clQ"/>
+                                    <constraint firstAttribute="width" secondItem="YNd-cl-60o" secondAttribute="height" multiplier="21:22" constant="29.86363636363636" id="G0V-A4-NQ1"/>
+                                    <constraint firstAttribute="width" secondItem="YNd-cl-60o" secondAttribute="height" multiplier="21:22" constant="29.86363636363636" id="yxs-1x-GXc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.38286047832130565" green="0.79547602728878697" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="pCI-B2-6sP" firstAttribute="top" secondItem="YNd-cl-60o" secondAttribute="bottom" constant="84" id="2f2-mQ-pNn"/>
+                            <constraint firstItem="pCI-B2-6sP" firstAttribute="top" secondItem="YNd-cl-60o" secondAttribute="bottom" constant="62" id="2f2-mQ-pNn"/>
                             <constraint firstItem="Jlo-io-RGs" firstAttribute="top" secondItem="K9I-jD-KjA" secondAttribute="top" constant="105" id="423-i4-eZu"/>
                             <constraint firstItem="Gaa-cU-5xf" firstAttribute="top" secondItem="Jlo-io-RGs" secondAttribute="bottom" constant="169" id="Ghj-6q-2N4"/>
                             <constraint firstItem="K9I-jD-KjA" firstAttribute="trailing" secondItem="8cE-TN-Xiq" secondAttribute="trailing" constant="79" id="Jac-l1-74L"/>
-                            <constraint firstItem="8cE-TN-Xiq" firstAttribute="leading" secondItem="YNd-cl-60o" secondAttribute="trailing" constant="57.5" id="Q8V-5K-wZm"/>
+                            <constraint firstItem="8cE-TN-Xiq" firstAttribute="leading" secondItem="YNd-cl-60o" secondAttribute="trailing" constant="23" id="Q8V-5K-wZm"/>
                             <constraint firstItem="8cE-TN-Xiq" firstAttribute="leading" secondItem="Gaa-cU-5xf" secondAttribute="trailing" constant="136" id="QRt-SH-qCj"/>
                             <constraint firstItem="YNd-cl-60o" firstAttribute="centerX" secondItem="ZwX-cT-FIQ" secondAttribute="centerX" id="UF4-JY-fvy"/>
                             <constraint firstItem="pCI-B2-6sP" firstAttribute="leading" secondItem="K9I-jD-KjA" secondAttribute="leading" constant="177" id="VYF-OR-u3d"/>
-                            <constraint firstItem="8cE-TN-Xiq" firstAttribute="leading" secondItem="YNd-cl-60o" secondAttribute="trailing" constant="57.5" id="ZLd-ap-ViS"/>
+                            <constraint firstItem="8cE-TN-Xiq" firstAttribute="leading" secondItem="YNd-cl-60o" secondAttribute="trailing" constant="23" id="ZLd-ap-ViS"/>
                             <constraint firstItem="K9I-jD-KjA" firstAttribute="trailing" secondItem="pCI-B2-6sP" secondAttribute="trailing" constant="177" id="Zt9-kA-gyO"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Ki7-vJ-do7" secondAttribute="bottom" constant="-7" id="ddd-ba-hqD"/>
                             <constraint firstItem="Jlo-io-RGs" firstAttribute="leading" secondItem="K9I-jD-KjA" secondAttribute="leading" constant="79" id="hmQ-VP-XeN"/>
                             <constraint firstItem="Ki7-vJ-do7" firstAttribute="leading" secondItem="K9I-jD-KjA" secondAttribute="leading" constant="122" id="hqz-hA-Yma"/>
                             <constraint firstItem="K9I-jD-KjA" firstAttribute="bottom" secondItem="pCI-B2-6sP" secondAttribute="bottom" constant="103" id="kkT-CS-TmV"/>
                             <constraint firstItem="K9I-jD-KjA" firstAttribute="trailing" secondItem="Jlo-io-RGs" secondAttribute="trailing" constant="79" id="knE-YW-RUQ"/>
-                            <constraint firstItem="YNd-cl-60o" firstAttribute="top" secondItem="Jlo-io-RGs" secondAttribute="bottom" constant="188" id="lNs-bb-E1U"/>
+                            <constraint firstItem="YNd-cl-60o" firstAttribute="top" secondItem="Jlo-io-RGs" secondAttribute="bottom" constant="169" id="lNs-bb-E1U"/>
                             <constraint firstItem="Gaa-cU-5xf" firstAttribute="leading" secondItem="K9I-jD-KjA" secondAttribute="leading" constant="79" id="lcZ-Bw-z0r"/>
-                            <constraint firstItem="YNd-cl-60o" firstAttribute="top" secondItem="Jlo-io-RGs" secondAttribute="bottom" constant="188" id="mDU-kr-VBf"/>
+                            <constraint firstItem="YNd-cl-60o" firstAttribute="top" secondItem="Jlo-io-RGs" secondAttribute="bottom" constant="169" id="mDU-kr-VBf"/>
                             <constraint firstItem="YNd-cl-60o" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Gaa-cU-5xf" secondAttribute="trailing" id="qGi-K9-qJo"/>
-                            <constraint firstItem="pCI-B2-6sP" firstAttribute="top" secondItem="YNd-cl-60o" secondAttribute="bottom" constant="84" id="qUq-FU-3eF"/>
+                            <constraint firstItem="pCI-B2-6sP" firstAttribute="top" secondItem="YNd-cl-60o" secondAttribute="bottom" constant="62" id="qUq-FU-3eF"/>
                             <constraint firstItem="YNd-cl-60o" firstAttribute="centerX" secondItem="Ki7-vJ-do7" secondAttribute="centerX" id="udB-np-3Ds"/>
                             <constraint firstItem="8cE-TN-Xiq" firstAttribute="top" secondItem="Jlo-io-RGs" secondAttribute="bottom" constant="169" id="zBq-Yr-IgN"/>
                         </constraints>
@@ -96,11 +105,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundUIView" destination="ZwX-cT-FIQ" id="gpI-2C-95l"/>
-                        <outlet property="confirmAddBtn" destination="pCI-B2-6sP" id="CNg-pH-sfQ"/>
-                        <outlet property="minusBtn" destination="Gaa-cU-5xf" id="lXp-VL-3Mc"/>
-                        <outlet property="plusBtn" destination="8cE-TN-Xiq" id="oUx-Bv-E9B"/>
                         <outlet property="volumeOfWaterAddingLabel" destination="YNd-cl-60o" id="hU8-B9-fDp"/>
-                        <outlet property="waterBottleBtn" destination="Jlo-io-RGs" id="NbR-eH-L7L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmD-Rr-ZGN" sceneMemberID="firstResponder"/>
