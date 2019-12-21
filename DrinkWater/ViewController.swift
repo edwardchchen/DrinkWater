@@ -23,6 +23,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    func addWater(plusBtn : UIButton) {
+    }
 
 
 }
