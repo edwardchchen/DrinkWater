@@ -15,15 +15,11 @@ class ViewController: UIViewController {
     @IBOutlet var backgroundUIView: UIView!
     
     @IBAction func addWaterBtn(_ sender: UIButton) {
-        var currentVolumeAdding = Int(volumeOfWaterAddingLabel.text ?? "0")
-        currentVolumeAdding = currentVolumeAdding! + 25
-        volumeOfWaterAddingLabel.text = String(currentVolumeAdding ?? 0)
+        volumeOfWaterAddingLabel.text = addingWaterHelper(sign: "add")
     }
     
     @IBAction func removeWaterBtn(_ sender: UIButton) {
-        var currentVolumeAdding = Int(volumeOfWaterAddingLabel.text ?? "0")
-        currentVolumeAdding = currentVolumeAdding! - 25
-        volumeOfWaterAddingLabel.text = String(currentVolumeAdding ?? 0)
+        volumeOfWaterAddingLabel.text = addingWaterHelper(sign: "delete")
     }
     @IBAction func addIntoBottleBtn(_ sender: UIButton) {
         let currentVolumeAdding = Int(volumeOfWaterAddingLabel.text ?? "0")!
@@ -41,6 +37,17 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func addingWaterHelper(sign : String) -> String {
+        var currentVolumeAdding = Int(volumeOfWaterAddingLabel.text ?? "0")
+        if (sign == "add") {
+            currentVolumeAdding = currentVolumeAdding! + 25
+            return String(currentVolumeAdding ?? 0)
+        } else {
+            currentVolumeAdding = Int(volumeOfWaterAddingLabel.text ?? "0")
+            currentVolumeAdding = currentVolumeAdding! - 25
+            return String(currentVolumeAdding ?? 0)
+        }
+    }
 
 
 }
