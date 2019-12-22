@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Settings-->
         <scene sceneID="Opl-DH-XSZ">
             <objects>
-                <viewController id="aTM-Fd-I3J" customClass="SettingViewController" customModule="DrinkWater" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aTM-Fd-I3J" userLabel="Settings" customClass="SettingViewController" customModule="DrinkWater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eDb-pT-sh8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -72,16 +72,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="27S-Kb-vN2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="kH9-j7-UZz"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="icons8-settings-30" selectedImage="icons8-settings-30" id="kH9-j7-UZz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O0y-0W-ttj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1128.985507246377" y="-96.428571428571431"/>
         </scene>
-        <!--Item 1-->
+        <!--Water-->
         <scene sceneID="XEs-un-Fva">
             <objects>
-                <viewController id="cRG-Ij-WJ8" customClass="ViewController" customModule="DrinkWater" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cRG-Ij-WJ8" userLabel="Water" customClass="ViewController" customModule="DrinkWater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HRh-5X-7Gs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,7 +212,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="biB-en-5fN"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="kbD-PC-0zM"/>
+                    <tabBarItem key="tabBarItem" title="Water" image="icons8-plus-30" selectedImage="icons8-plus-30" id="kbD-PC-0zM"/>
                     <connections>
                         <outlet property="backgroundUIView" destination="ZwX-cT-FIQ" id="ubn-PC-zrd"/>
                         <outlet property="totalAmountWaterLabel" destination="UB4-MR-MZm" id="Tx7-PZ-Yl2"/>
@@ -223,10 +223,10 @@
             </objects>
             <point key="canvasLocation" x="1130" y="-744"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="jCj-zs-HnB">
             <objects>
-                <tabBarController id="Q9O-rc-f0T" sceneMemberID="viewController">
+                <tabBarController id="Q9O-rc-f0T" customClass="TabBarViewController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Csz-lY-rde">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -244,6 +244,8 @@
     </scenes>
     <resources>
         <image name="check" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="icons8-plus-30" width="30" height="30"/>
+        <image name="icons8-settings-30" width="30" height="30"/>
         <image name="minus" width="170.66667175292969" height="170.66667175292969"/>
         <image name="plus" width="170.66667175292969" height="170.66667175292969"/>
         <image name="water" width="256" height="256"/>
