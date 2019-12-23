@@ -89,6 +89,16 @@
 			path = "Supporting files";
 			sourceTree = "<group>";
 		};
+		36CE6DB323B07E5E00AF4E14 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				36CE6DAB23AF35DE00AF4E14 /* SettingViewController.swift */,
+				36CE6DAD23AF389B00AF4E14 /* SettingViewCell.swift */,
+				36CE6DAF23AF4E2F00AF4E14 /* Setting.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		36D5D89A23AC8781007B1187 = {
 			isa = PBXGroup;
 			children = (
@@ -116,9 +126,7 @@
 				36D5D8B623AC8782007B1187 /* Info.plist */,
 				36D5D8B123AC8782007B1187 /* Assets.xcassets */,
 				366A11A823AD96EE004316FB /* ViewController.swift */,
-				36CE6DAB23AF35DE00AF4E14 /* SettingViewController.swift */,
-				36CE6DAD23AF389B00AF4E14 /* SettingViewCell.swift */,
-				36CE6DAF23AF4E2F00AF4E14 /* Setting.swift */,
+				36CE6DB323B07E5E00AF4E14 /* Setting */,
 				366A11AA23AD973B004316FB /* Supporting files */,
 			);
 			path = DrinkWater;
