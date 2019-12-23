@@ -12,8 +12,10 @@ import UIKit
 class Setting {
     var image : UIImage
     var title : String
-    init (image: UIImage, title: String) {
+    var uniqueID : String
+    init (image: UIImage, title: String, uniqueID: String) {
         self.image = image
         self.title = title
+        self.uniqueID = uniqueID
     }
 }

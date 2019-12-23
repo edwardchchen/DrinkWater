@@ -19,11 +19,11 @@ class SettingViewController : UIViewController {
     
     func createCells() ->[Setting] {
         var tempCells : [Setting] = []
-        let cellFive = Setting(image: #imageLiteral(resourceName: "notification_icon_hello"), title: "Notification Time")
-        let cellThree = Setting (image:#imageLiteral(resourceName: "unit"), title: "Imperial/Metric")
-        let cellTwo = Setting (image: #imageLiteral(resourceName: "goal"), title : "Daily Goal")
-        let cellFour = Setting (image: #imageLiteral(resourceName: "email"), title : "Notification Message")
-        let cellOne = Setting (image: #imageLiteral(resourceName: "heartbeat") , title: "Apple HealthKit")
+        let cellOne = Setting (image: #imageLiteral(resourceName: "heartbeat") , title: "Apple HealthKit", uniqueID: "healthKitCell")
+        let cellTwo = Setting (image: #imageLiteral(resourceName: "goal"), title : "Daily Goal", uniqueID : "goalsCell")
+        let cellThree = Setting (image: #imageLiteral(resourceName: "email"), title : "Notification Message", uniqueID: "notificationMsgCell")
+        let cellFour = Setting(image: #imageLiteral(resourceName: "notification_icon_hello"), title: "Notification Time", uniqueID: "notificationTimeCell")
+        let cellFive = Setting (image:#imageLiteral(resourceName: "unit"), title: "Unit Conversion", uniqueID: "unitCell")
         
         tempCells.append(cellOne)
         tempCells.append(cellTwo)
@@ -49,10 +49,9 @@ extension SettingViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let setting = settingCells[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "healthKitCell") as! SettingViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: setting.uniqueID) as! SettingViewCell
         cell.setCell(setting: setting)
         return cell
     }
-    
     
 }
