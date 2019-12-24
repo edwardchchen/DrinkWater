@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var totalAmountWaterLabel: UILabel!
+    
+    var notification = NotificationSender()
+ 
 
     @IBOutlet weak var volumeOfWaterAddingLabel: UILabel!
     @IBOutlet var backgroundUIView: UIView!
@@ -29,11 +32,12 @@ class ViewController: UIViewController {
         volumeOfWaterAddingLabel.text = "0"
 
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         volumeOfWaterAddingLabel.text = "0"
         totalAmountWaterLabel.text = "0"
+        notification.constructNotification(hour: 13,minute: 8)
+    
         // Do any additional setup after loading the view.
     }
     

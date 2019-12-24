@@ -6,6 +6,7 @@
 //  Copyright © 2019 Edward Chen. All rights reserved.
 //
 
+import UserNotifications
 import UIKit
 
 @UIApplicationMain
@@ -18,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UITabBar.appearance().barTintColor = .white
         UITabBar.appearance().tintColor = .red
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge,.sound]) { (granted,error) in
+        }
         return true
     }
 
