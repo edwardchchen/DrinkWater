@@ -11,16 +11,16 @@ import UIKit
 
 
 class Time {
-//    var date = DateComponents()
-//    var minute : Int
-//    var hour : Int
-    var hey : String
+    var date = DateComponents()
+    var minute : Int
+    var hour : Int
+//    var hey : String
     
-    init(hey : String) {
-//        self.date = date
-//        self.minute = date.minute!
-//        self.hour = date.hour!
-        self.hey = hey
+    init(date : DateComponents) {
+        self.date = date
+        self.minute = date.minute!
+        self.hour = date.hour!
+//        self.hey = hey
     }
     
 }

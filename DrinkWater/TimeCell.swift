@@ -12,9 +12,9 @@ class TimeCell : UITableViewCell {
     @IBOutlet weak var timeCell: UILabel!
     
     func setCell(time ap : Time) {
-//        let timeInString = String(ap.hour) + ":" + String(ap.minute)
-//        timeCell.text = timeInString
-        timeCell.text = ap.hey
+        let timeInString = String(ap.hour) + ":" + String(ap.minute)
+        timeCell.text = timeInString
+//        timeCell.text = ap.hey
         
     }
 }

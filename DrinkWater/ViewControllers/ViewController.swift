@@ -10,48 +10,43 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var totalAmountWaterLabel: UILabel!
+    @IBOutlet weak var volumeOfWaterAddingLabel: UILabel!
+    @IBOutlet var backgroundUIView: UIView!
+    @IBOutlet weak var todayGoal: UILabel!
     
+    var totalVolume = 0
+    var currentAdding = 0
+    var todayGoalVolume = 2000
     var notification = NotificationSender()
  
 
-    @IBOutlet weak var volumeOfWaterAddingLabel: UILabel!
-    @IBOutlet var backgroundUIView: UIView!
     
     @IBAction func addWaterBtn(_ sender: UIButton) {
-        volumeOfWaterAddingLabel.text = addingWaterHelper(sign: "add")
+        currentAdding = currentAdding + 25
+        volumeOfWaterAddingLabel.text = NSString(format: "%i mL", currentAdding) as String
+        totalAmountWaterLabel.text = NSString(format: "Total: %i mL", totalVolume) as String
     }
     
     @IBAction func removeWaterBtn(_ sender: UIButton) {
-        volumeOfWaterAddingLabel.text = addingWaterHelper(sign: "delete")
+        currentAdding = currentAdding - 25
+        volumeOfWaterAddingLabel.text = NSString(format: "%i mL", currentAdding) as String
+        totalAmountWaterLabel.text = NSString(format: "Total: %i mL", totalVolume) as String
+
     }
     @IBAction func addIntoBottleBtn(_ sender: UIButton) {
-        let currentVolumeAdding = Int(volumeOfWaterAddingLabel.text ?? "0")!
-        let currentTotal = Int(totalAmountWaterLabel.text ?? "0")
-        let sum = currentTotal! + currentVolumeAdding
-        totalAmountWaterLabel.text = String(sum)
-        volumeOfWaterAddingLabel.text = "0"
+        totalVolume = totalVolume + currentAdding
+        totalAmountWaterLabel.text = NSString(format: "Total: %i mL", totalVolume) as String
+        currentAdding = 0
+        volumeOfWaterAddingLabel.text = NSString(format: "%i mL", 0) as String
 
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        volumeOfWaterAddingLabel.text = "0"
-        totalAmountWaterLabel.text = "0"
-        notification.constructNotification(hour: 13,minute: 8)
-    
-        // Do any additional setup after loading the view.
+        volumeOfWaterAddingLabel.text = NSString(format: "%i mL", totalVolume) as String
+        totalAmountWaterLabel.text = NSString(format: "Total: %i mL", 0) as String
+        todayGoal.text = NSString(format: "Today's Goal is: %i mL", todayGoalVolume) as String
     }
     
-    func addingWaterHelper(sign : String) -> String {
-        var currentVolumeAdding = Int(volumeOfWaterAddingLabel.text ?? "0")
-        if (sign == "add") {
-            currentVolumeAdding = currentVolumeAdding! + 25
-            return String(currentVolumeAdding ?? 0)
-        } else {
-            currentVolumeAdding = Int(volumeOfWaterAddingLabel.text ?? "0")
-            currentVolumeAdding = currentVolumeAdding! - 25
-            return String(currentVolumeAdding ?? 0)
-        }
-    }
 
 
 }

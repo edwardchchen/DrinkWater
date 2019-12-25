@@ -25,8 +25,8 @@ class AddTimeViewController : UIViewController {
         var date = DateComponents()
         date.hour = 12
         date.minute = 3
-        let cellOne = Time(hey: "12:03")
-        let cellTwo = Time(hey: "12:03")
+        let cellOne = Time(date: date)
+        let cellTwo = Time(date: date)
         
         tempCells.append(cellOne)
         tempCells.append(cellTwo)
