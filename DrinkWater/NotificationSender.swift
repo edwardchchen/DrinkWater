@@ -35,7 +35,6 @@ class NotificationSender {
     func removeNotification(hour : Int, minute : Int) {
         let timeInString = String(hour) + String(minute)
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [timeInString])
-
     }
     
     func changeNotificationMsg(msg : String) {

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3628FB9E23B1945B0006FC7F /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628FB9D23B1945B0006FC7F /* Time.swift */; };
-		3628FBA023B196050006FC7F /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628FB9F23B196050006FC7F /* TimeViewController.swift */; };
 		3628FBA223B196880006FC7F /* NotificationSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628FBA123B196880006FC7F /* NotificationSender.swift */; };
 		366A116D23AD699F004316FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A116C23AD699F004316FB /* AppDelegate.swift */; };
 		366A11A923AD96EE004316FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A11A823AD96EE004316FB /* ViewController.swift */; };
@@ -21,6 +20,7 @@
 		36D5D8B523AC8782007B1187 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36D5D8B323AC8782007B1187 /* LaunchScreen.storyboard */; };
 		36D5D8C023AC8783007B1187 /* DrinkWaterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D5D8BF23AC8783007B1187 /* DrinkWaterTests.swift */; };
 		36D5D8CB23AC8783007B1187 /* DrinkWaterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D5D8CA23AC8783007B1187 /* DrinkWaterUITests.swift */; };
+		36E8C78723B2D21200C2832D /* AddTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E8C78623B2D21200C2832D /* AddTimeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,6 @@
 
 /* Begin PBXFileReference section */
 		3628FB9D23B1945B0006FC7F /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
-		3628FB9F23B196050006FC7F /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
 		3628FBA123B196880006FC7F /* NotificationSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSender.swift; sourceTree = "<group>"; };
 		366A116C23AD699F004316FB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		366A11A823AD96EE004316FB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		36D5D8C623AC8783007B1187 /* DrinkWaterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrinkWaterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36D5D8CA23AC8783007B1187 /* DrinkWaterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkWaterUITests.swift; sourceTree = "<group>"; };
 		36D5D8CC23AC8783007B1187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36E8C78623B2D21200C2832D /* AddTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,6 @@
 		36CE6DB323B07E5E00AF4E14 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				36CE6DAB23AF35DE00AF4E14 /* SettingViewController.swift */,
 				36CE6DAD23AF389B00AF4E14 /* SettingViewCell.swift */,
 				36CE6DAF23AF4E2F00AF4E14 /* Setting.swift */,
 			);
@@ -133,10 +132,9 @@
 				36D5D8AE23AC8781007B1187 /* Main.storyboard */,
 				36D5D8B623AC8782007B1187 /* Info.plist */,
 				36D5D8B123AC8782007B1187 /* Assets.xcassets */,
-				366A11A823AD96EE004316FB /* ViewController.swift */,
-				36CE6DB423B0956D00AF4E14 /* TimeCell.swift */,
+				36E8C78523B2D1C400C2832D /* ViewControllers */,
 				3628FBA123B196880006FC7F /* NotificationSender.swift */,
-				3628FB9F23B196050006FC7F /* TimeViewController.swift */,
+				36CE6DB423B0956D00AF4E14 /* TimeCell.swift */,
 				3628FB9D23B1945B0006FC7F /* Time.swift */,
 				36CE6DB323B07E5E00AF4E14 /* Setting */,
 				366A11AA23AD973B004316FB /* Supporting files */,
@@ -160,6 +158,16 @@
 				36D5D8CC23AC8783007B1187 /* Info.plist */,
 			);
 			path = DrinkWaterUITests;
+			sourceTree = "<group>";
+		};
+		36E8C78523B2D1C400C2832D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				366A11A823AD96EE004316FB /* ViewController.swift */,
+				36E8C78623B2D21200C2832D /* AddTimeViewController.swift */,
+				36CE6DAB23AF35DE00AF4E14 /* SettingViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,11 +303,11 @@
 			files = (
 				3628FBA223B196880006FC7F /* NotificationSender.swift in Sources */,
 				36CE6DB523B0956E00AF4E14 /* TimeCell.swift in Sources */,
-				3628FBA023B196050006FC7F /* TimeViewController.swift in Sources */,
 				36CE6DB023AF4E2F00AF4E14 /* Setting.swift in Sources */,
 				3628FB9E23B1945B0006FC7F /* Time.swift in Sources */,
 				366A11A923AD96EE004316FB /* ViewController.swift in Sources */,
 				36CE6DAE23AF389B00AF4E14 /* SettingViewCell.swift in Sources */,
+				36E8C78723B2D21200C2832D /* AddTimeViewController.swift in Sources */,
 				366A116D23AD699F004316FB /* AppDelegate.swift in Sources */,
 				36CE6DAC23AF35DE00AF4E14 /* SettingViewController.swift in Sources */,
 			);

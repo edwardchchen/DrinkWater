@@ -21,12 +21,12 @@ class SettingViewController : UIViewController {
         var tempCells : [Setting] = []
         let cellOne = Setting (image: #imageLiteral(resourceName: "heartbeat") , title: "Apple HealthKit", uniqueID: "healthKitCell")
         let cellTwo = Setting (image: #imageLiteral(resourceName: "goal"), title : "Daily Goal", uniqueID : "goalsCell")
-        let cellThree = Setting (image: #imageLiteral(resourceName: "email"), title : "Notification Message", uniqueID: "notificationMsgCell")
+//        let cellThree = Setting (image: #imageLiteral(resourceName: "email"), title : "Notification Message", uniqueID: "notificationMsgCell")
         let cellFour = Setting(image: #imageLiteral(resourceName: "notification_icon_hello"), title: "Notification Time", uniqueID: "notificationTimeCell")
         
         tempCells.append(cellOne)
         tempCells.append(cellTwo)
-        tempCells.append(cellThree)
+//        tempCells.append(cellThree)
         tempCells.append(cellFour)
         
         return tempCells
