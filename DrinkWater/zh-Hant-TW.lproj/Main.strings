@@ -1,0 +1,75 @@
+
+/* Class = "UILabel"; text = "Set your daily goal here:"; ObjectID = "EuI-Ta-rcT"; */
+"EuI-Ta-rcT.text" = "設定今日的目標:";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "FH2-j3-Bxu"; */
+"FH2-j3-Bxu.title" = "Item";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "GR8-uh-YBr"; */
+"GR8-uh-YBr.title" = "Title";
+
+/* Class = "UIButton"; normalTitle = "-"; ObjectID = "Gaa-cU-5xf"; */
+"Gaa-cU-5xf.normalTitle" = "-";
+
+/* Class = "UILabel"; text = "Good Morning!"; ObjectID = "KAv-Vi-idp"; */
+"KAv-Vi-idp.text" = "早安!";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "Kwk-ez-Jug"; */
+"Kwk-ez-Jug.title" = "Item";
+
+/* Class = "UILabel"; text = "Health Kit"; ObjectID = "NbC-w3-sXO"; */
+"NbC-w3-sXO.text" = "Health Kit";
+
+/* Class = "UIBarButtonItem"; title = "Delete"; ObjectID = "NeT-6P-tYw"; */
+"NeT-6P-tYw.title" = "刪除";
+
+/* Class = "UILabel"; text = "Today's Goal:"; ObjectID = "SJz-Pk-T7Q"; */
+"SJz-Pk-T7Q.text" = "今日目標:";
+
+/* Class = "UILabel"; text = "Goals"; ObjectID = "Tjr-UA-G8g"; */
+"Tjr-UA-G8g.text" = "目標";
+
+/* Class = "UILabel"; text = "Total: 250"; ObjectID = "UB4-MR-MZm"; */
+"UB4-MR-MZm.text" = "Total: 250";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "Ubx-VW-PvF"; */
+"Ubx-VW-PvF.text" = "時間";
+
+/* Class = "UINavigationItem"; title = "Set Time"; ObjectID = "VOH-kD-tPS"; */
+"VOH-kD-tPS.title" = "設定提醒時間";
+
+/* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "XnW-gW-FMf"; */
+"XnW-gW-FMf.title" = "取消";
+
+/* Class = "UILabel"; text = "50"; ObjectID = "YNd-cl-60o"; */
+"YNd-cl-60o.text" = "50";
+
+/* Class = "UILabel"; text = "Sync with Apple Health Kit"; ObjectID = "YhD-Yg-0gK"; */
+"YhD-Yg-0gK.text" = " 同步 Apple Health Kit";
+
+/* Class = "UIBarButtonItem"; title = "Add"; ObjectID = "dnp-Ay-PWA"; */
+"dnp-Ay-PWA.title" = "加入";
+
+/* Class = "UIBarButtonItem"; title = "Add"; ObjectID = "hgN-eG-mtF"; */
+"hgN-eG-mtF.title" = "加入";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "kH9-j7-UZz"; */
+"kH9-j7-UZz.title" = "設定";
+
+/* Class = "UITabBarItem"; title = "Water"; ObjectID = "kbD-PC-0zM"; */
+"kbD-PC-0zM.title" = "加水";
+
+/* Class = "UILabel"; text = "Notification Time"; ObjectID = "nFL-BC-MeF"; */
+"nFL-BC-MeF.text" = "提醒時間";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "oVF-Wb-BIB"; */
+"oVF-Wb-BIB.title" = "設定";
+
+/* Class = "UILabel"; text = "mL"; ObjectID = "oYa-Yf-jAf"; */
+"oYa-Yf-jAf.text" = "毫升";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "sej-OM-g5R"; */
+"sej-OM-g5R.title" = "設定";
+
+/* Class = "UIButton"; normalTitle = "Set"; ObjectID = "ukC-xP-Bx2"; */
+"ukC-xP-Bx2.normalTitle" = "更新";

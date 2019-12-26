@@ -41,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		360F091123B43727002C90BF /* DrinkWater.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DrinkWater.entitlements; sourceTree = "<group>"; };
+		360F091D23B43B8D002C90BF /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/Main.strings"; sourceTree = "<group>"; };
+		360F091E23B43B8D002C90BF /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		3628FB9D23B1945B0006FC7F /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		3628FBA123B196880006FC7F /* NotificationSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSender.swift; sourceTree = "<group>"; };
 		366A116C23AD699F004316FB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +91,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		360F091223B43728002C90BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		366A11AA23AD973B004316FB /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 				36D5D8BE23AC8783007B1187 /* DrinkWaterTests */,
 				36D5D8C923AC8783007B1187 /* DrinkWaterUITests */,
 				36D5D8A423AC8781007B1187 /* Products */,
+				360F091223B43728002C90BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +140,7 @@
 		36D5D8A523AC8781007B1187 /* DrinkWater */ = {
 			isa = PBXGroup;
 			children = (
+				360F091123B43727002C90BF /* DrinkWater.entitlements */,
 				36D5D8AE23AC8781007B1187 /* Main.storyboard */,
 				36D5D8B623AC8782007B1187 /* Info.plist */,
 				36D5D8B123AC8782007B1187 /* Assets.xcassets */,
@@ -238,6 +250,17 @@
 				TargetAttributes = {
 					36D5D8A223AC8781007B1187 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 0;
+							};
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+							com.apple.HomeKit = {
+								enabled = 0;
+							};
+						};
 					};
 					36D5D8BA23AC8783007B1187 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -256,6 +279,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant-TW",
 			);
 			mainGroup = 36D5D89A23AC8781007B1187;
 			productRefGroup = 36D5D8A423AC8781007B1187 /* Products */;
@@ -349,6 +373,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				36D5D8AF23AC8781007B1187 /* Base */,
+				360F091D23B43B8D002C90BF /* zh-Hant-TW */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -357,6 +382,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				36D5D8B423AC8782007B1187 /* Base */,
+				360F091E23B43B8D002C90BF /* zh-Hant-TW */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -368,6 +394,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -429,6 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -485,7 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N3F6V2PLST;
 				INFOPLIST_FILE = DrinkWater/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -503,7 +531,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N3F6V2PLST;
 				INFOPLIST_FILE = DrinkWater/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
