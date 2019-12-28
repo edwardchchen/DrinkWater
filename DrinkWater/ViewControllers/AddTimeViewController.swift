@@ -12,11 +12,26 @@ import UIKit
 class AddTimeViewController : UIViewController {
     
     var timeCells : [Time] = []
-
+    
+    @IBOutlet weak var frequencyLabel: UILabel!
+    @IBOutlet weak var slider: UISlider!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         timeCells = createTimeCells()
+        let sliderValue = Int(slider.value)
+        frequencyLabel.text = NSString(format: "Frequency: %i minutes", sliderValue ) as String
+    }
+    
+    @IBAction func sliderMoved(_ sender: UISlider) {
+        changeFrequencyLabel()
+    }
+    
+    func changeFrequencyLabel() {
+        let sliderValue = Int(slider.value)
+        frequencyLabel.text = NSString(format: "Frequency: %i minutes", sliderValue) as String
+        
     }
     
     
@@ -38,7 +53,7 @@ extension AddTimeViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 100
     }
     
     
@@ -49,4 +64,10 @@ extension AddTimeViewController : UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection
+        section: Int) -> String? {
+        return "Start/End Time"
+    }
+    
+
 }
