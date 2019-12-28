@@ -15,9 +15,9 @@ class Time {
     var hour : Int
     var uniqueID : String
     
-    init(date : DateComponents, uniqueID : String) {
-        self.minute = date.minute!
-        self.hour = date.hour!
+    init(hour : Int, minute : Int , uniqueID : String) {
+        self.minute = minute
+        self.hour = hour
         self.uniqueID = uniqueID
     }
     

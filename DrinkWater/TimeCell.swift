@@ -9,11 +9,12 @@
 import UIKit
 
 class TimeCell : UITableViewCell {
-    @IBOutlet weak var time: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
     
     func setCell(time ap : Time) {
         let timeInString = String(ap.hour) + ":" + String(ap.minute)
-        time.text = timeInString
+        timeLabel.text = timeInString
         
     }
 }

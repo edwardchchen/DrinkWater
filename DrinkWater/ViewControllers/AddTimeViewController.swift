@@ -22,16 +22,11 @@ class AddTimeViewController : UIViewController {
     
     func createTimeCells () ->[Time] {
         var tempCells : [Time] = []
-        var date = DateComponents()
-        date.hour = 12
-        date.minute = 2
-        let cellOne = Time(date: date, uniqueID: "startTimeCell")
-        let cellTwo = Time(date: date, uniqueID: "endTimeCell")
-        let cellThree = Time(date: date, uniqueID: "frequencyCell")
+        let cellOne = Time(hour: 12, minute: 13, uniqueID: "startTimeCell")
+        let cellTwo = Time(hour: 23, minute: 23, uniqueID: "endTimeCell")
         
         tempCells.append(cellOne)
         tempCells.append(cellTwo)
-        tempCells.append(cellThree)
         
         return tempCells
     }

@@ -326,25 +326,25 @@
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="timeCell"/>
                                         <connections>
-                                            <outlet property="time" destination="TaT-TP-Itl" id="b8w-kl-mE8"/>
+                                            <outlet property="timeLabel" destination="TaT-TP-Itl" id="Xbj-Mx-IkF"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="endTimeCell" textLabel="IRM-ar-G8K" detailTextLabel="AOg-kB-4Gb" rowHeight="101" style="IBUITableViewCellStyleValue1" id="HPe-N7-m4l" customClass="TimeCell" customModule="DrinkWater" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="endTimeCell" textLabel="U87-sq-pn3" detailTextLabel="C3H-Zp-1Fx" rowHeight="101" style="IBUITableViewCellStyleValue1" id="bmQ-e8-7B0" customClass="TimeCell" customModule="DrinkWater" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="156.5" width="414" height="101"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HPe-N7-m4l" id="NAw-ql-Swr">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bmQ-e8-7B0" id="sTM-rS-gbu">
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="100.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="End at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IRM-ar-G8K">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="End at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U87-sq-pn3">
                                                     <rect key="frame" x="20" y="40" width="53.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="currentEndTime" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AOg-kB-4Gb">
-                                                    <rect key="frame" x="253.5" y="40" width="122.5" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="currentStartTime" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C3H-Zp-1Fx">
+                                                    <rect key="frame" x="245.5" y="40" width="130.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -354,33 +354,8 @@
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="timeCell"/>
                                         <connections>
-                                            <outlet property="timeCell" destination="IRM-ar-G8K" id="RDB-Ah-NyL"/>
+                                            <outlet property="timeLabel" destination="C3H-Zp-1Fx" id="r0g-xx-9cR"/>
                                         </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="frequencyCell" textLabel="GYE-Lu-xlc" detailTextLabel="VYb-Hv-PTB" rowHeight="101" style="IBUITableViewCellStyleValue1" id="TmS-77-j40" customClass="TimeCell" customModule="DrinkWater" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="257.5" width="414" height="101"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TmS-77-j40" id="zPK-eT-7zj">
-                                            <rect key="frame" x="0.0" y="0.0" width="376" height="100.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Frequency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GYE-Lu-xlc">
-                                                    <rect key="frame" x="20" y="40" width="85.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="currentFrequency" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VYb-Hv-PTB">
-                                                    <rect key="frame" x="239.5" y="40" width="136.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration" identifier="timeCell"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

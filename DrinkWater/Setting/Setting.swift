@@ -13,6 +13,7 @@ class Setting {
     var image : UIImage
     var title : String
     var uniqueID : String
+    
     init (image: UIImage, title: String, uniqueID: String) {
         self.image = image
         self.title = title
