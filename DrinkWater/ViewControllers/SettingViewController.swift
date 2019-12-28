@@ -9,12 +9,14 @@
 import UIKit
 
 class SettingViewController : UIViewController {
+    @IBOutlet weak var welcomeMsgLabel: UILabel!
     
     var settingCells : [Setting] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         settingCells = createCells()
+        displayWelcomeMsg()
     }
     
     func createCells() ->[Setting] {
@@ -24,13 +26,30 @@ class SettingViewController : UIViewController {
 //        let cellThree = Setting (image: #imageLiteral(resourceName: "email"), title : "Notification Message", uniqueID: "notificationMsgCell")
         let cellFour = Setting(image: #imageLiteral(resourceName: "notification_icon_hello"), title: "Notification Time", uniqueID: "notificationTimeCell")
         
+        let cellFive = Setting (image: #imageLiteral(resourceName: "unit"), title: "Units", uniqueID: "unitCell")
+        
         tempCells.append(cellOne)
         tempCells.append(cellTwo)
 //        tempCells.append(cellThree)
         tempCells.append(cellFour)
+        tempCells.append(cellFive)
         
         return tempCells
-
+    }
+    
+    func displayWelcomeMsg() {
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        if (hour > 18 || hour < 6) {
+            welcomeMsgLabel.text = "Good Night!"
+        } else if (hour >= 6 || hour < 11 ) {
+            welcomeMsgLabel.text = "Good Morning!"
+        } else if ( hour >= 11 || hour <= 1) {
+            welcomeMsgLabel.text = "Good AfterNoon!"
+        } else {
+            welcomeMsgLabel.text = "Good Evening!"
+        }
     }
     
 }

@@ -24,12 +24,14 @@ class AddTimeViewController : UIViewController {
         var tempCells : [Time] = []
         var date = DateComponents()
         date.hour = 12
-        date.minute = 3
-        let cellOne = Time(date: date)
-        let cellTwo = Time(date: date)
+        date.minute = 2
+        let cellOne = Time(date: date, uniqueID: "startTimeCell")
+        let cellTwo = Time(date: date, uniqueID: "endTimeCell")
+        let cellThree = Time(date: date, uniqueID: "frequencyCell")
         
         tempCells.append(cellOne)
         tempCells.append(cellTwo)
+        tempCells.append(cellThree)
         
         return tempCells
     }
@@ -47,7 +49,7 @@ extension AddTimeViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let time = timeCells[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "timeCell") as! TimeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: time.uniqueID) as! TimeCell
         cell.setCell(time: time)
         return cell
     }
