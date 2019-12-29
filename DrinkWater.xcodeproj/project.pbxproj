@@ -11,6 +11,7 @@
 		3628FBA223B196880006FC7F /* NotificationSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628FBA123B196880006FC7F /* NotificationSender.swift */; };
 		366A116D23AD699F004316FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A116C23AD699F004316FB /* AppDelegate.swift */; };
 		366A11A923AD96EE004316FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A11A823AD96EE004316FB /* ViewController.swift */; };
+		367AA0B023B86D5A008AA317 /* UnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367AA0AF23B86D5A008AA317 /* UnitViewController.swift */; };
 		36CE6DAC23AF35DE00AF4E14 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE6DAB23AF35DE00AF4E14 /* SettingViewController.swift */; };
 		36CE6DAE23AF389B00AF4E14 /* SettingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE6DAD23AF389B00AF4E14 /* SettingViewCell.swift */; };
 		36CE6DB023AF4E2F00AF4E14 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CE6DAF23AF4E2F00AF4E14 /* Setting.swift */; };
@@ -48,6 +49,7 @@
 		3628FBA123B196880006FC7F /* NotificationSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSender.swift; sourceTree = "<group>"; };
 		366A116C23AD699F004316FB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		366A11A823AD96EE004316FB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		367AA0AF23B86D5A008AA317 /* UnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitViewController.swift; sourceTree = "<group>"; };
 		36CE6DAB23AF35DE00AF4E14 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		36CE6DAD23AF389B00AF4E14 /* SettingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewCell.swift; sourceTree = "<group>"; };
 		36CE6DAF23AF4E2F00AF4E14 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				366A11A823AD96EE004316FB /* ViewController.swift */,
 				36E8C78623B2D21200C2832D /* AddTimeViewController.swift */,
 				36CE6DAB23AF35DE00AF4E14 /* SettingViewController.swift */,
+				367AA0AF23B86D5A008AA317 /* UnitViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			files = (
 				3628FBA223B196880006FC7F /* NotificationSender.swift in Sources */,
 				36CE6DB523B0956E00AF4E14 /* TimeCell.swift in Sources */,
+				367AA0B023B86D5A008AA317 /* UnitViewController.swift in Sources */,
 				36CE6DB023AF4E2F00AF4E14 /* Setting.swift in Sources */,
 				3628FB9E23B1945B0006FC7F /* Time.swift in Sources */,
 				366A11A923AD96EE004316FB /* ViewController.swift in Sources */,
