@@ -20,9 +20,16 @@ class AddTimeViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         timeCells = createTimeCells()
+        setUp()
+    }
+    
+    
+    
+    func setUp() {
         let sliderValue = Int(slider.value)
         frequencyLabel.text = NSString(format: "Frequency: %i minutes", sliderValue ) as String
     }
+    
     
     @IBAction func sliderMoved(_ sender: UISlider) {
         changeFrequencyLabel()
