@@ -33,13 +33,20 @@ class DailyGoalViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        changeUnitLabel()
         loadDailyGoal()
         textField.text = String(dailyGoal)
         createTap()
         createPicker()
     }
 
-    
+    func changeUnitLabel() {
+        if (defaults.bool(forKey: Keys.unitpref)) {
+            unitLabel.text = "mL"
+        }
+        unitLabel.text = "oz"
+        
+    }
     func saveDailyGoal() {
         dailyGoal = Int(textField.text!)!
         defaults.set(dailyGoal, forKey: Keys.goal)

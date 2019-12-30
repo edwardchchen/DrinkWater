@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let defaults = UserDefaults.standard
+    
     @IBOutlet weak var totalAmountWaterLabel: UILabel!
     @IBOutlet weak var volumeOfWaterAddingLabel: UILabel!
     @IBOutlet var backgroundUIView: UIView!
@@ -42,6 +44,7 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        todayGoalVolume = defaults.integer(forKey: "dailyGoal")
         volumeOfWaterAddingLabel.text = NSString(format: "%i mL", totalVolume) as String
         totalAmountWaterLabel.text = NSString(format: "Total: %i mL", 0) as String
         todayGoal.text = NSString(format: "Today's Goal is: %i mL", todayGoalVolume) as String
