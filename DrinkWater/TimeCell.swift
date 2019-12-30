@@ -16,5 +16,7 @@ class TimeCell : UITableViewCell {
         let timeInString = String(ap.hour) + ":" + String(ap.minute)
         timeLabel.text = timeInString
         
-    }
+    }    
+    
+
 }

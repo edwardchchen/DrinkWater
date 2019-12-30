@@ -47,6 +47,10 @@ class ViewController: UIViewController {
         todayGoal.text = NSString(format: "Today's Goal is: %i mL", todayGoalVolume) as String
     }
     
+    func isGoalReached()-> Bool {
+        return todayGoalVolume == totalVolume
+    }
+    
     
 
 

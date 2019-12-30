@@ -11,23 +11,53 @@ import UIKit
 
 class UnitViewController : UIViewController {
     
+    struct Keys {
+        static let unitpref = "unitPreference"
+    }
+    
     @IBOutlet weak var textField: UITextField!
+    
+    let defaults = UserDefaults.standard
+    
     let units = ["Metric", "Imperial"]
     
-    var selectedUnits : String?
+    var selectedUnits = "Metric"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         createPicker()
         createTap()
+        loadUnitPreference()
     }
     
+    @IBAction func saveUnits(_ sender: UIButton) {
+        save()
+    }
     
+    func isMetric() -> Bool {
+        return selectedUnits == "Metric"
+    }
+    
+    func save() {
+        defaults.set(isMetric(),forKey: "unitPreference")
+    }
+    
+    func loadUnitPreference() {
+        let pref = defaults.bool(forKey: Keys.unitpref)
+        if (pref) {
+            selectedUnits = "Metric"
+            textField.text = selectedUnits
+        } else {
+            selectedUnits = "Imperial"
+            textField.text = selectedUnits
+        }
+    }
+
     func createPicker() {
         let picker = UIPickerView()
-        picker.delegate = self as? UIPickerViewDelegate
+        picker.delegate = self
+        picker.dataSource = self
         textField.inputView = picker
-    
     }
     
     func createTap() {
@@ -35,8 +65,7 @@ class UnitViewController : UIViewController {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
-    
-    
+
 }
 
 extension UnitViewController : UIPickerViewDelegate, UIPickerViewDataSource {
