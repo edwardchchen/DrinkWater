@@ -15,6 +15,8 @@ class DailyGoalViewController : UIViewController {
     let volumeInMetric = [1600,1800,2000,2200,2400,2600,
     2800,3000,3200,3400, 3600, 3800, 4000]
     
+    let volumeInImperial = [40,54,60,68,74,82,88,94,100,108]
+    
     let defaults = UserDefaults.standard
 
     struct Keys {
@@ -39,12 +41,24 @@ class DailyGoalViewController : UIViewController {
         createTap()
         createPicker()
     }
+    
+    func correctList () -> [Int] {
+        let isMetric = defaults.bool(forKey: Keys.unitpref)
+        if (isMetric) {
+            return volumeInMetric
+        } else {
+            return volumeInImperial
+        }
+    }
 
     func changeUnitLabel() {
-        if (defaults.bool(forKey: Keys.unitpref)) {
+        let isMetric = defaults.bool(forKey: Keys.unitpref)
+        print(isMetric)
+        if (isMetric) {
             unitLabel.text = "mL"
+        } else {
+            unitLabel.text = "oz"
         }
-        unitLabel.text = "oz"
         
     }
     func saveDailyGoal() {
@@ -78,7 +92,7 @@ class DailyGoalViewController : UIViewController {
 extension DailyGoalViewController : UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return volumeInMetric.count
+        return correctList().count
     }
     
     
@@ -87,11 +101,11 @@ extension DailyGoalViewController : UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(volumeInMetric[row])
+        return String(correctList()[row])
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        dailyGoal = volumeInMetric[row]
+        dailyGoal = correctList()[row]
         textField.text = String(dailyGoal)
     }
 }
