@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 class AddTimeViewController : UIViewController {
+    struct Keys {
+        static let frequency = "frequency"
+    }
+    
+    let defaults = UserDefaults.standard
     
     var timeCells : [Time] = []
 
@@ -36,6 +41,7 @@ class AddTimeViewController : UIViewController {
     
     
     func setUp() {
+        slider.setValue(Float(defaults.integer(forKey: Keys.frequency)), animated: false)
         let sliderValue = Int(slider.value)
         frequencyLabel.text = String(format: "Frequency: %i minutes per message", sliderValue )
     }
@@ -43,11 +49,12 @@ class AddTimeViewController : UIViewController {
     
     @IBAction func sliderMoved(_ sender: UISlider) {
         changeFrequencyLabel()
+        defaults.set(Int(slider.value), forKey: Keys.frequency)
     }
     
     func changeFrequencyLabel() {
         let sliderValue = Int(slider.value)
-        frequencyLabel.text = String(format: "Frequency: %i minutes", sliderValue)
+        frequencyLabel.text = String(format: "Frequency: %i minutes per message", sliderValue)
         
     }
     
