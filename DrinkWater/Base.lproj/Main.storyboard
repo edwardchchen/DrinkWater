@@ -397,10 +397,10 @@
             </objects>
             <point key="canvasLocation" x="3475" y="302"/>
         </scene>
-        <!--View Controller-->
+        <!--Notification Time View Controller-->
         <scene sceneID="G2r-Q8-cBg">
             <objects>
-                <viewController id="ixU-92-OIX" sceneMemberID="viewController">
+                <viewController id="ixU-92-OIX" customClass="NotificationTimeViewController" customModule="DrinkWater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l8D-rr-4UA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -418,6 +418,7 @@
                                 <state key="normal" title="Set"/>
                                 <connections>
                                     <action selector="setBtn:" destination="BVs-gA-Oid" eventType="touchUpInside" id="ocb-5T-x8o"/>
+                                    <action selector="setButtonPressed:" destination="ixU-92-OIX" eventType="touchUpInside" id="pqB-hZ-are"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set the start notification time here:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oa2-Tq-ALn">
@@ -431,6 +432,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8SA-bC-jCH"/>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="Oa2-Tq-ALn" id="MUV-Z5-mUJ"/>
+                        <outlet property="startTimeTextField" destination="kbn-cx-vbK" id="aup-NR-wAE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RO4-XN-d4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
