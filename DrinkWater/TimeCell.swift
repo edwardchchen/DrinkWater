@@ -10,10 +10,11 @@ import UIKit
 
 class TimeCell : UITableViewCell {
     
+    var helper = timeToStringHelper()
     @IBOutlet weak var timeLabel: UILabel!
     
-    func setCell(time ap : Time) {
-        let timeInString = String(ap.hour) + ":" + String(ap.minute)
+    func setCell(time tm : Time) {
+        let timeInString = helper.timeToString(hour: tm.hour, minutes: tm.minute)
         timeLabel.text = timeInString
         
     }    

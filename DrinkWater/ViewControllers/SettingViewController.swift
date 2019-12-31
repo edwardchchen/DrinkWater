@@ -41,7 +41,7 @@ class SettingViewController : UIViewController {
         let date = Date()
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
-        if (hour > 18 && hour < 6) {
+        if (hour > 18) {
             welcomeMsgLabel.text = "Good Night!"
         } else if (hour >= 6 && hour < 11 ) {
             welcomeMsgLabel.text = "Good Morning!"
