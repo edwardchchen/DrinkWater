@@ -14,8 +14,7 @@ class TimeCell : UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     
     func setCell(time tm : Time) {
-        let timeInString = helper.timeToString(hour: tm.hour, minutes: tm.minute)
-        timeLabel.text = timeInString
+        timeLabel.text = tm.time
         
     }    
     

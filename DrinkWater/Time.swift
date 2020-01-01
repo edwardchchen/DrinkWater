@@ -11,13 +11,11 @@ import UIKit
 
 
 class Time {
-    var minute : Int
-    var hour : Int
+    var time : String
     var uniqueID : String
     
-    init(hour : Int, minute : Int , uniqueID : String) {
-        self.minute = minute
-        self.hour = hour
+    init(time:String , uniqueID : String) {
+        self.time = time
         self.uniqueID = uniqueID
     }
     

@@ -13,11 +13,9 @@ class ViewController: UIViewController {
     struct Keys {
         static let todayTotal = "todayTotal"
         static let dailyGoal = "dailyGoal"
-        static let dailyGoalInImperial = "dailyGoalInImperial"
-        static let todayToalInImperial = "todayToalInImperial"
         static let lastAccessedDate = "lastAccessedDate"
         static let unitsChanged = false
-        static let oneOzEqualsmL = 29.5735296875
+        static let isMetric = "unitPreference"
     }
     
     let defaults = UserDefaults.standard
@@ -66,8 +64,12 @@ class ViewController: UIViewController {
     }
     
     func setUp() {
-        todayGoalVolume = defaults.integer(forKey: Keys.dailyGoal)
-        todayTotal = defaults.integer(forKey: Keys.todayTotal)
+        //load from userdefaults
+        todayGoalVolume = convertUnits(integer: defaults.integer(forKey: Keys.dailyGoal))
+        todayTotal = convertUnits(integer: defaults.integer(forKey: Keys.todayTotal))
+        
+        
+        
         volumeOfWaterAddingLabel.text = String(format: "%i " + unitLabel, 0)
         totalAmountWaterLabel.text = String(format: "Total: %i " + unitLabel, todayTotal)
         todayGoal.text = String(format: "Today's Goal is: %i " + unitLabel, todayGoalVolume)
@@ -124,6 +126,18 @@ class ViewController: UIViewController {
     
     
     
+    func isMetric() -> Bool {
+        return defaults.bool(forKey: Keys.isMetric)
+    }
+    
+    func convertUnits(integer : Int) -> Int{
+        if (!isMetric()) {
+            let res = Float(integer)/29.5735296875
+            return Int(res)
+        }else {
+            return integer
+        }
+    }
 
 
 

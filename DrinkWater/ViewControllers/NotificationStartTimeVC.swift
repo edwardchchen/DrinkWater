@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class NotificationTimeViewController :UIViewController {
+class NotificationStartTimeVC :UIViewController {
     struct Keys {
         static let startTime = "startTime"
     }
@@ -59,7 +59,7 @@ class NotificationTimeViewController :UIViewController {
     
 }
 
-extension NotificationTimeViewController : UIPickerViewDelegate  {
+extension NotificationStartTimeVC : UIPickerViewDelegate  {
     func createTap() {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         tap.cancelsTouchesInView = false

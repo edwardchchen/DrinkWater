@@ -10,8 +10,11 @@ import Foundation
 import UIKit
 
 class AddTimeViewController : UIViewController {
+    
     struct Keys {
         static let frequency = "frequency"
+        static let startTime = "startTime"
+        static let endTime = "endTime"
     }
     
     let defaults = UserDefaults.standard
@@ -29,8 +32,10 @@ class AddTimeViewController : UIViewController {
     
     func createTimeCells () ->[Time] {
         var tempCells : [Time] = []
-        let cellOne = Time(hour: 10, minute: 00, uniqueID: "startTimeCell")
-        let cellTwo = Time(hour: 22, minute: 00, uniqueID: "endTimeCell")
+        let startTime = defaults.string(forKey: Keys.startTime)
+        let endTime = defaults.string(forKey: Keys.endTime)
+        let cellOne = Time(time: startTime ?? "<no_time>", uniqueID: "startTimeCell")
+        let cellTwo = Time(time: endTime ?? "<no_time>", uniqueID: "endTimeCell")
         
         tempCells.append(cellOne)
         tempCells.append(cellTwo)

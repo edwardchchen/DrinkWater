@@ -397,10 +397,10 @@
             </objects>
             <point key="canvasLocation" x="3475" y="302"/>
         </scene>
-        <!--Notification Time View Controller-->
+        <!--Notification Start TimeVC-->
         <scene sceneID="G2r-Q8-cBg">
             <objects>
-                <viewController id="ixU-92-OIX" customClass="NotificationTimeViewController" customModule="DrinkWater" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ixU-92-OIX" customClass="NotificationStartTimeVC" customModule="DrinkWater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l8D-rr-4UA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -628,10 +628,10 @@
             </objects>
             <point key="canvasLocation" x="2755" y="846"/>
         </scene>
-        <!--View Controller-->
+        <!--Notification End TimeVC-->
         <scene sceneID="mWw-gH-2Ku">
             <objects>
-                <viewController id="zlT-Wf-7wf" sceneMemberID="viewController">
+                <viewController id="zlT-Wf-7wf" customClass="NotificationEndTimeVC" customModule="DrinkWater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yox-z7-YGc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -649,6 +649,7 @@
                                 <state key="normal" title="Set"/>
                                 <connections>
                                     <action selector="setBtn:" destination="BVs-gA-Oid" eventType="touchUpInside" id="Vwh-qT-lEV"/>
+                                    <action selector="setButtonPressed:" destination="zlT-Wf-7wf" eventType="touchUpInside" id="I8I-h1-CNU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set the end notification time here:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYg-mk-CxG">
@@ -662,6 +663,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="EpQ-ki-YYa"/>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="PYg-mk-CxG" id="57l-3c-Itz"/>
+                        <outlet property="textField" destination="Oec-RY-Vbu" id="OUn-Xd-lgb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Akx-V5-ez6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
