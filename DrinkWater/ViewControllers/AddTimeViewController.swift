@@ -26,7 +26,6 @@ class AddTimeViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timeCells = createTimeCells()
         setUp()
     }
     
@@ -49,6 +48,7 @@ class AddTimeViewController : UIViewController {
         slider.setValue(Float(defaults.integer(forKey: Keys.frequency)), animated: false)
         let sliderValue = Int(slider.value)
         frequencyLabel.text = String(format: "Frequency: %i minutes per message", sliderValue )
+        timeCells = createTimeCells()
     }
     
     

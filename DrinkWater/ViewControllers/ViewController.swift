@@ -6,6 +6,12 @@
 //  Copyright © 2019 Edward Chen. All rights reserved.
 //
 
+//TODO: metric/imperial conversion
+//Notfication completion
+//Widget
+//TODO LATER:
+//SQL + graphs ???
+
 import UIKit
 
 class ViewController: UIViewController {
@@ -14,7 +20,6 @@ class ViewController: UIViewController {
         static let todayTotal = "todayTotal"
         static let dailyGoal = "dailyGoal"
         static let lastAccessedDate = "lastAccessedDate"
-        static let unitsChanged = false
         static let isMetric = "unitPreference"
     }
     
@@ -36,6 +41,7 @@ class ViewController: UIViewController {
     
     @IBAction func addWaterBtn(_ sender: UIButton) {
         currentAdding = currentAdding + addPerClick
+
         volumeOfWaterAddingLabel.text = String(format: "%i " + unitLabel, currentAdding)
         totalAmountWaterLabel.text = String(format: "Total: %i " + unitLabel, todayTotal)
     }
@@ -52,7 +58,11 @@ class ViewController: UIViewController {
         totalAmountWaterLabel.text = String(format: "Total: %i " + unitLabel, todayTotal)
         currentAdding = 0
         volumeOfWaterAddingLabel.text = String(format: "%i " + unitLabel, 0)
-        defaults.set(todayTotal, forKey: Keys.todayTotal)
+        if(!isMetric()) {
+            defaults.set(convertFromImperialToMetric(imperial: todayTotal), forKey: Keys.todayTotal)
+        } else {
+            defaults.set(todayTotal, forKey: Keys.todayTotal)
+        }
 
     }
     
@@ -61,13 +71,18 @@ class ViewController: UIViewController {
         changeUnitLabels()
         setUp()
         resetDate()
+
     }
     
     func setUp() {
         //load from userdefaults
-        todayGoalVolume = convertUnits(integer: defaults.integer(forKey: Keys.dailyGoal))
-        todayTotal = convertUnits(integer: defaults.integer(forKey: Keys.todayTotal))
-        
+        if (!isMetric()) {
+        todayGoalVolume = convertFromMetricToImperial(integer: defaults.integer(forKey: Keys.dailyGoal))
+        todayTotal = convertFromMetricToImperial(integer: defaults.integer(forKey: Keys.todayTotal))
+        } else {
+            todayGoalVolume = defaults.integer(forKey: Keys.dailyGoal)
+            todayTotal = defaults.integer(forKey: Keys.todayTotal)
+        }
         
         
         volumeOfWaterAddingLabel.text = String(format: "%i " + unitLabel, 0)
@@ -83,11 +98,11 @@ class ViewController: UIViewController {
     func changeUnitLabels () {
         let isMetric = defaults.bool(forKey: "unitPreference")
         if (isMetric) {
-            addPerClick = 25
             unitLabel = "mL"
+            addPerClick = 25
         } else {
-            addPerClick = 1
             unitLabel = "oz"
+            addPerClick = 1
         }
     }
     
@@ -130,16 +145,27 @@ class ViewController: UIViewController {
         return defaults.bool(forKey: Keys.isMetric)
     }
     
-    func convertUnits(integer : Int) -> Int{
-        if (!isMetric()) {
-            let res = Float(integer)/29.5735296875
-            return Int(res)
-        }else {
-            return integer
-        }
+    
+    func convertFromMetricToImperial(integer : Int) -> Int{
+        let res = Float(integer)/29.5735296875
+        return Int(res)
+    }
+    
+    func convertFromImperialToMetric (imperial: Int) -> Int {
+        let res = Float(imperial) * 29.5735296875
+        return Int(res)
     }
 
 
 
 }
 
+extension ViewController {
+    override func viewWillAppear(_: Bool) {
+        super.viewWillAppear(true)
+        changeUnitLabels()
+        setUp()
+        resetDate()
+        
+    }
+}

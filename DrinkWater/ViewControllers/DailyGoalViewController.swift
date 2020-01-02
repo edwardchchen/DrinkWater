@@ -62,9 +62,17 @@ class DailyGoalViewController : UIViewController {
         
     }
     func saveDailyGoal() {
-        dailyGoal = Int(textField.text!)!
-        defaults.set(dailyGoal, forKey: Keys.goal)
-        print("save %i", dailyGoal)
+        let isMetric = defaults.bool(forKey: Keys.unitpref)
+        if(isMetric) {
+            dailyGoal = Int(textField.text!)!
+            defaults.set(dailyGoal, forKey: Keys.goal)
+            print("save %i", dailyGoal)
+        } else {
+            dailyGoal = Int(textField.text!)!
+            let goal = Float(dailyGoal) * 29.5735296875
+            defaults.set(Int(goal), forKey: Keys.goal)
+            print("save %i", dailyGoal)
+        }
     }
     
     func loadDailyGoal() {

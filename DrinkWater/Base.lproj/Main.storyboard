@@ -289,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4RX-PW-Nd6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4074" y="-559"/>
+            <point key="canvasLocation" x="4074" y="-851"/>
         </scene>
         <!--AddTimeViewController-->
         <scene sceneID="kB6-vz-el6">
@@ -395,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Szu-kS-Ogq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3475" y="302"/>
+            <point key="canvasLocation" x="3012" y="320"/>
         </scene>
         <!--Notification Start TimeVC-->
         <scene sceneID="G2r-Q8-cBg">
@@ -439,7 +439,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RO4-XN-d4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4743.4782608695659" y="45.535714285714285"/>
+            <point key="canvasLocation" x="4074" y="76"/>
         </scene>
         <!--Water-->
         <scene sceneID="XEs-un-Fva">
@@ -452,7 +452,7 @@
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZwX-cT-FIQ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCI-B2-6sP">
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCI-B2-6sP">
                                         <rect key="frame" x="161" y="639" width="92" height="92"/>
                                         <state key="normal" image="check"/>
                                         <connections>
@@ -462,11 +462,11 @@
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ki7-vJ-do7">
                                         <rect key="frame" x="122" y="804" width="39" height="37"/>
                                     </pageControl>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlo-io-RGs">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlo-io-RGs">
                                         <rect key="frame" x="63" y="194" width="288" height="256"/>
                                         <state key="normal" backgroundImage="water"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gaa-cU-5xf">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gaa-cU-5xf">
                                         <rect key="frame" x="79" y="546" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="9PL-HY-DSM"/>
@@ -477,14 +477,14 @@
                                             <action selector="removeWaterBtn:" destination="cRG-Ij-WJ8" eventType="touchUpInside" id="tGZ-tM-3GV"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cE-TN-Xiq">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cE-TN-Xiq">
                                         <rect key="frame" x="275" y="546" width="61" height="60"/>
                                         <state key="normal" backgroundImage="plus"/>
                                         <connections>
                                             <action selector="addWaterBtn:" destination="cRG-Ij-WJ8" eventType="touchUpInside" id="Du2-sL-90t"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNd-cl-60o">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNd-cl-60o">
                                         <rect key="frame" x="147" y="546" width="121" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="EEc-Mx-Ioy"/>
@@ -557,7 +557,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qsk-gJ-9UU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1128.985507246377" y="-744.64285714285711"/>
+            <point key="canvasLocation" x="1867" y="-851"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="jCj-zs-HnB">
@@ -575,7 +575,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1kl-Hk-lU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="211" y="-419"/>
+            <point key="canvasLocation" x="-64" y="-696"/>
         </scene>
         <!--Unit View Controller-->
         <scene sceneID="Tod-wj-5Nc">
@@ -626,7 +626,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jv9-gV-Y0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2755" y="846"/>
+            <point key="canvasLocation" x="3012" y="1205"/>
         </scene>
         <!--Notification End TimeVC-->
         <scene sceneID="mWw-gH-2Ku">
@@ -670,7 +670,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Akx-V5-ez6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4838" y="778"/>
+            <point key="canvasLocation" x="4074" y="905"/>
         </scene>
     </scenes>
     <resources>
