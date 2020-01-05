@@ -63,6 +63,7 @@ class ViewController: UIViewController {
         totalAmountWaterLabel.text = String(format: "Total: %i " + unitLabel, todayTotal)
         currentAdding = 0
         volumeOfWaterAddingLabel.text = String(format: "%i " + unitLabel, 0)
+        tapToLoad()
         if(!isMetric()) {
             defaults.set(convertFromImperialToMetric(imperial: todayTotal), forKey: Keys.todayTotal)
         } else {
@@ -177,6 +178,7 @@ class ViewController: UIViewController {
         percentage = percentage * 100
         percentage.round()
         percentageLabel.text = String(format: "%i %%", Int(percentage))
+        percentageLabel.font = UIFont.boldSystemFont(ofSize: 25)
         percentageLabel.textColor = UIColor.white
         self.view.addSubview(percentageLabel)
 
@@ -188,7 +190,21 @@ class ViewController: UIViewController {
         let height:CGFloat = bounds.size.height
 
         let centerPt = CGPoint(x: width/2, y: height/2.5)
-        let circularPath = UIBezierPath(arcCenter: .zero, radius: 130, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: .zero, radius: 100, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        
+        //Track Layer
+        let trackLayer = CAShapeLayer()
+        trackLayer.path = circularPath.cgPath
+        trackLayer.position = centerPt
+        trackLayer.path = circularPath.cgPath
+        trackLayer.strokeColor = UIColor.gray.cgColor
+        trackLayer.fillColor = UIColor.clear.cgColor
+        trackLayer.lineWidth = 10
+        trackLayer.transform = CATransform3DMakeRotation(-CGFloat.pi/2, 0, 0, 1)
+        trackLayer.lineCap = CAShapeLayerLineCap.round
+
+        
+        //Shape Layer
 
         shapeLayer.position = centerPt
         shapeLayer.path = circularPath.cgPath
@@ -196,24 +212,29 @@ class ViewController: UIViewController {
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineWidth = 10
         shapeLayer.transform = CATransform3DMakeRotation(-CGFloat.pi/2, 0, 0, 1)
+        shapeLayer.lineCap = CAShapeLayerLineCap.round
+
+        shapeLayer.strokeEnd = 0
         
-        let percentage = Float(todayTotal)/Float(todayGoalVolume)
-        print(percentage)
         
-        shapeLayer.strokeEnd = 0.8
+        
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapToLoad)))
+        view.layer.addSublayer(trackLayer)
         view.layer.addSublayer(shapeLayer)
 
     }
     
     @objc private func tapToLoad() {
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        basicAnimation.toValue = 1
+        let percentage = Float(todayTotal)/Float(todayGoalVolume)
+        print(percentage)
+        basicAnimation.toValue = percentage
         basicAnimation.duration = 1
         basicAnimation.fillMode = .forwards
         basicAnimation.isRemovedOnCompletion = false
         shapeLayer.add(basicAnimation, forKey: "basicAnimation")
+        checkPercentageLabel()
     }
     
     func checkPercentageLabel() {
@@ -237,7 +258,6 @@ extension ViewController {
         changeUnitLabels()
         setUp()
         resetDate()
-        checkPercentageLabel()
         tapToLoad()
     }
 }

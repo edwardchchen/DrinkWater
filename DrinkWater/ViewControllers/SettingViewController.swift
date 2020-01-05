@@ -21,14 +21,14 @@ class SettingViewController : UIViewController {
     
     func createCells() ->[Setting] {
         var tempCells : [Setting] = []
-        let cellOne = Setting (image: #imageLiteral(resourceName: "heartbeat") , title: "Appearance", uniqueID: "appearanceCell")
+//        let cellOne = Setting (image: #imageLiteral(resourceName: "heartbeat") , title: "Appearance", uniqueID: "appearanceCell")
         let cellTwo = Setting (image: #imageLiteral(resourceName: "goal"), title : "Daily Goal", uniqueID : "goalsCell")
 //        let cellThree = Setting (image: #imageLiteral(resourceName: "email"), title : "Notification Message", uniqueID: "notificationMsgCell")
         let cellFour = Setting(image: #imageLiteral(resourceName: "notification_icon_hello"), title: "Notification Time", uniqueID: "notificationTimeCell")
         
         let cellFive = Setting (image: #imageLiteral(resourceName: "unit"), title: "Units", uniqueID: "unitCell")
         
-        tempCells.append(cellOne)
+//        tempCells.append(cellOne)
         tempCells.append(cellTwo)
 //        tempCells.append(cellThree)
         tempCells.append(cellFour)
