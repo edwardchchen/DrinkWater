@@ -25,6 +25,7 @@ class AddTimeViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "bg blue grad"))
     }
     
     func createTimeCells () ->[Time] {

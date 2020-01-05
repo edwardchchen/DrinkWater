@@ -30,6 +30,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var volumeOfWaterAddingLabel: UILabel!
     @IBOutlet var backgroundUIView: UIView!
     @IBOutlet weak var todayGoal: UILabel!
+    @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var minusButton: UIButton!
     
     var todayTotal = 0
     var currentAdding = 0
@@ -48,19 +50,19 @@ class ViewController: UIViewController {
         currentAdding = currentAdding + addPerClick
 
         volumeOfWaterAddingLabel.text = String(format: "%i " + unitLabel, currentAdding)
-        totalAmountWaterLabel.text = String(format: "Total: %i " + unitLabel, todayTotal)
+        totalAmountWaterLabel.text = String(format: "%i " + unitLabel, todayTotal)
     }
     
     @IBAction func removeWaterBtn(_ sender: UIButton) {
         currentAdding = currentAdding - addPerClick
         volumeOfWaterAddingLabel.text = String(format: "%i " + unitLabel, currentAdding)
-        totalAmountWaterLabel.text = String(format: "Total: %i " + unitLabel, todayTotal)
+        totalAmountWaterLabel.text = String(format: "%i " + unitLabel, todayTotal)
 
     }
     
     @IBAction func addIntoBottleBtn(_ sender: UIButton) {
         todayTotal = todayTotal + currentAdding
-        totalAmountWaterLabel.text = String(format: "Total: %i " + unitLabel, todayTotal)
+        totalAmountWaterLabel.text = String(format: "%i " + unitLabel, todayTotal)
         currentAdding = 0
         volumeOfWaterAddingLabel.text = String(format: "%i " + unitLabel, 0)
         tapToLoad()
@@ -79,6 +81,8 @@ class ViewController: UIViewController {
         resetDate()
         createProgressCircle()
         createPercentageLabel()
+        
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "120 Seashore"))
 
     }
     
@@ -94,10 +98,24 @@ class ViewController: UIViewController {
         
         
         volumeOfWaterAddingLabel.text = String(format: "%i " + unitLabel, 0)
-        totalAmountWaterLabel.text = String(format: "Total: %i " + unitLabel, todayTotal)
-        todayGoal.text = String(format: "Today's Goal is: %i " + unitLabel, todayGoalVolume)
+        totalAmountWaterLabel.text = String(format: "%i " + unitLabel, todayTotal)
+        todayGoal.text = String(format: "%i " + unitLabel, todayGoalVolume)
         
+        volumeOfWaterAddingLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        
+        addButton.layer.borderWidth = 2
+        addButton.layer.borderColor = UIColor.white.cgColor
+
         addButton.layer.cornerRadius = 25.0
+        
+        plusButton.layer.cornerRadius = 30.0
+        plusButton.layer.borderWidth = 2
+        plusButton.layer.borderColor = UIColor.white.cgColor
+
+        minusButton.layer.cornerRadius = 30.0
+        minusButton.layer.borderWidth = 2
+        minusButton.layer.borderColor = UIColor.white.cgColor
+
 
     }
     
@@ -126,24 +144,24 @@ class ViewController: UIViewController {
     
     
     //EFFECT: returns true if today's date == last accessed date
-    func checkDate() -> Bool {
+    func isLastAccessedDateToday() -> Bool {
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         let result = formatter.string(from: date)
-        let lastAccessedDate = defaults.string(forKey: Keys.lastAccessedDate)
-        if (result != lastAccessedDate) {
-            return false
-        } else {
+        let lastAccessedDate = String(defaults.string(forKey: Keys.lastAccessedDate) ?? "<no_date>")
+        if (result == lastAccessedDate || lastAccessedDate == "<no_date>") {
             return true
+        } else {
+            return false
         }
     }
     
     //EFFECT: set
     func resetDate () {
-        if(!checkDate()) {
-            todayTotal = 0
+        if(!isLastAccessedDateToday()) {
             setCurrentDate()
+            todayTotal = 0
             defaults.set(0, forKey: Keys.todayTotal)
         }
     }
@@ -197,7 +215,7 @@ class ViewController: UIViewController {
         trackLayer.path = circularPath.cgPath
         trackLayer.position = centerPt
         trackLayer.path = circularPath.cgPath
-        trackLayer.strokeColor = UIColor.gray.cgColor
+        trackLayer.strokeColor = UIColor.darkGray.cgColor
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.lineWidth = 10
         trackLayer.transform = CATransform3DMakeRotation(-CGFloat.pi/2, 0, 0, 1)
@@ -208,7 +226,8 @@ class ViewController: UIViewController {
 
         shapeLayer.position = centerPt
         shapeLayer.path = circularPath.cgPath
-        shapeLayer.strokeColor = UIColor.blue.cgColor
+        let bgColor = UIColor.init(displayP3Red: 140, green: 224, blue: 240, alpha: 1.0)
+        shapeLayer.strokeColor = bgColor.cgColor
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineWidth = 10
         shapeLayer.transform = CATransform3DMakeRotation(-CGFloat.pi/2, 0, 0, 1)
@@ -219,7 +238,8 @@ class ViewController: UIViewController {
         
         
         
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapToLoad)))
+//        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapToLoad)))
+        
         view.layer.addSublayer(trackLayer)
         view.layer.addSublayer(shapeLayer)
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3600DE5F23C1302600B15576 /* FrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600DE5E23C1302600B15576 /* FrequencyViewController.swift */; };
 		3628FBA223B196880006FC7F /* NotificationSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628FBA123B196880006FC7F /* NotificationSender.swift */; };
+		362D1DCF23C28B5400EAE224 /* HoursAndMinutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362D1DCE23C28B5400EAE224 /* HoursAndMinutes.swift */; };
 		365F3B0D23BC5C1600956EF4 /* NotificationEndTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F3B0C23BC5C1600956EF4 /* NotificationEndTimeVC.swift */; };
 		366A116D23AD699F004316FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A116C23AD699F004316FB /* AppDelegate.swift */; };
 		366A11A923AD96EE004316FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A11A823AD96EE004316FB /* ViewController.swift */; };
@@ -52,6 +53,7 @@
 		360F091D23B43B8D002C90BF /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/Main.strings"; sourceTree = "<group>"; };
 		360F091E23B43B8D002C90BF /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		3628FBA123B196880006FC7F /* NotificationSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSender.swift; sourceTree = "<group>"; };
+		362D1DCE23C28B5400EAE224 /* HoursAndMinutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursAndMinutes.swift; sourceTree = "<group>"; };
 		365F3B0C23BC5C1600956EF4 /* NotificationEndTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationEndTimeVC.swift; sourceTree = "<group>"; };
 		366A116C23AD699F004316FB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		366A11A823AD96EE004316FB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				36E8C78523B2D1C400C2832D /* ViewControllers */,
 				3628FBA123B196880006FC7F /* NotificationSender.swift */,
 				3689E72B23BA96FC0017F031 /* TimeCell.swift */,
+				362D1DCE23C28B5400EAE224 /* HoursAndMinutes.swift */,
 				3689E72A23BA96FC0017F031 /* Time.swift */,
 				3689E72E23BA98200017F031 /* timeToStringHelper.swift */,
 				36CE6DB323B07E5E00AF4E14 /* Setting */,
@@ -358,6 +361,7 @@
 				3600DE5F23C1302600B15576 /* FrequencyViewController.swift in Sources */,
 				36CE6DB023AF4E2F00AF4E14 /* Setting.swift in Sources */,
 				366A11A923AD96EE004316FB /* ViewController.swift in Sources */,
+				362D1DCF23C28B5400EAE224 /* HoursAndMinutes.swift in Sources */,
 				36CE6DAE23AF389B00AF4E14 /* SettingViewCell.swift in Sources */,
 				36E8C78723B2D21200C2832D /* AddTimeViewController.swift in Sources */,
 				366A116D23AD699F004316FB /* AppDelegate.swift in Sources */,
