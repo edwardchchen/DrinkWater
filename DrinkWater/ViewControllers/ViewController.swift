@@ -37,6 +37,9 @@ class ViewController: UIViewController {
     var notification = NotificationSender()
     var addPerClick = 25
     var unitLabel = "mL"
+    let percentageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+    var percentage : Float = 0.0
+
  
 
 
@@ -169,12 +172,13 @@ class ViewController: UIViewController {
         let width:CGFloat = bounds.size.width
         let height:CGFloat = bounds.size.height
 
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        label.center = CGPoint(x: width/2, y: height/2.5)
-        label.textAlignment = .center
-        label.text = "Percentage: "
-        label.textColor = UIColor.white
-        self.view.addSubview(label)
+        percentageLabel.center = CGPoint(x: width/2, y: height/2.5)
+        percentageLabel.textAlignment = .center
+        percentage = percentage * 100
+        percentage.round()
+        percentageLabel.text = String(format: "%i %%", Int(percentage))
+        percentageLabel.textColor = UIColor.white
+        self.view.addSubview(percentageLabel)
 
     }
 
@@ -184,15 +188,44 @@ class ViewController: UIViewController {
         let height:CGFloat = bounds.size.height
 
         let centerPt = CGPoint(x: width/2, y: height/2.5)
-        let circularPath = UIBezierPath(arcCenter: centerPt, radius: 130, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
-        
+        let circularPath = UIBezierPath(arcCenter: .zero, radius: 130, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+
+        shapeLayer.position = centerPt
         shapeLayer.path = circularPath.cgPath
         shapeLayer.strokeColor = UIColor.blue.cgColor
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineWidth = 10
+        shapeLayer.transform = CATransform3DMakeRotation(-CGFloat.pi/2, 0, 0, 1)
         
+        let percentage = Float(todayTotal)/Float(todayGoalVolume)
+        print(percentage)
+        
+        shapeLayer.strokeEnd = 0.8
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapToLoad)))
         view.layer.addSublayer(shapeLayer)
 
+    }
+    
+    @objc private func tapToLoad() {
+        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        basicAnimation.toValue = 1
+        basicAnimation.duration = 1
+        basicAnimation.fillMode = .forwards
+        basicAnimation.isRemovedOnCompletion = false
+        shapeLayer.add(basicAnimation, forKey: "basicAnimation")
+    }
+    
+    func checkPercentageLabel() {
+        if(todayTotal >= todayGoalVolume) {
+            percentageLabel.text = "100%"
+        } else {
+            var percentage = Float(todayTotal)/Float(todayGoalVolume)
+            percentage = percentage * 100
+            percentage.round()
+            percentageLabel.text = String(format: "%i %%", Int(percentage))
+
+        }
     }
 
 
@@ -204,6 +237,7 @@ extension ViewController {
         changeUnitLabels()
         setUp()
         resetDate()
-        
+        checkPercentageLabel()
+        tapToLoad()
     }
 }
