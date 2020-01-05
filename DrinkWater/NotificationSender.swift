@@ -37,6 +37,10 @@ class NotificationSender {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [timeInString])
     }
     
+    func removeAllNotification() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    }
+    
     func changeNotificationMsg(msg : String) {
         self.notificationmsg = msg
     }

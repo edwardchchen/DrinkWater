@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3600DE5F23C1302600B15576 /* FrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600DE5E23C1302600B15576 /* FrequencyViewController.swift */; };
 		3628FBA223B196880006FC7F /* NotificationSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3628FBA123B196880006FC7F /* NotificationSender.swift */; };
 		365F3B0D23BC5C1600956EF4 /* NotificationEndTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F3B0C23BC5C1600956EF4 /* NotificationEndTimeVC.swift */; };
 		366A116D23AD699F004316FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A116C23AD699F004316FB /* AppDelegate.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3600DE5E23C1302600B15576 /* FrequencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyViewController.swift; sourceTree = "<group>"; };
 		360F091123B43727002C90BF /* DrinkWater.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DrinkWater.entitlements; sourceTree = "<group>"; };
 		360F091D23B43B8D002C90BF /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/Main.strings"; sourceTree = "<group>"; };
 		360F091E23B43B8D002C90BF /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				366A11A823AD96EE004316FB /* ViewController.swift */,
 				36E8C78623B2D21200C2832D /* AddTimeViewController.swift */,
+				3600DE5E23C1302600B15576 /* FrequencyViewController.swift */,
 				36CE6DAB23AF35DE00AF4E14 /* SettingViewController.swift */,
 				367AA0B123B8760A008AA317 /* DailyGoalViewController.swift */,
 				365F3B0C23BC5C1600956EF4 /* NotificationEndTimeVC.swift */,
@@ -266,6 +269,9 @@
 					36D5D8A223AC8781007B1187 = {
 						CreatedOnToolsVersion = 10.2.1;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.DataProtection = {
 								enabled = 0;
 							};
@@ -273,6 +279,9 @@
 								enabled = 0;
 							};
 							com.apple.HomeKit = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
 								enabled = 0;
 							};
 						};
@@ -346,6 +355,7 @@
 				3689E72D23BA96FC0017F031 /* TimeCell.swift in Sources */,
 				3689E72C23BA96FC0017F031 /* Time.swift in Sources */,
 				3689E73123BAD54B0017F031 /* NotificationStartTimeVC.swift in Sources */,
+				3600DE5F23C1302600B15576 /* FrequencyViewController.swift in Sources */,
 				36CE6DB023AF4E2F00AF4E14 /* Setting.swift in Sources */,
 				366A11A923AD96EE004316FB /* ViewController.swift in Sources */,
 				36CE6DAE23AF389B00AF4E14 /* SettingViewCell.swift in Sources */,

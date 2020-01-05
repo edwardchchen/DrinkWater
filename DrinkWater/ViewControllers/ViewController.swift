@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var totalAmountWaterLabel: UILabel!
     @IBOutlet weak var volumeOfWaterAddingLabel: UILabel!
     @IBOutlet var backgroundUIView: UIView!
@@ -37,6 +38,7 @@ class ViewController: UIViewController {
     var addPerClick = 25
     var unitLabel = "mL"
  
+
 
     
     @IBAction func addWaterBtn(_ sender: UIButton) {
@@ -71,6 +73,8 @@ class ViewController: UIViewController {
         changeUnitLabels()
         setUp()
         resetDate()
+        createProgressCircle()
+        createPercentageLabel()
 
     }
     
@@ -88,6 +92,8 @@ class ViewController: UIViewController {
         volumeOfWaterAddingLabel.text = String(format: "%i " + unitLabel, 0)
         totalAmountWaterLabel.text = String(format: "Total: %i " + unitLabel, todayTotal)
         todayGoal.text = String(format: "Today's Goal is: %i " + unitLabel, todayGoalVolume)
+        
+        addButton.layer.cornerRadius = 25.0
 
     }
     
@@ -155,7 +161,39 @@ class ViewController: UIViewController {
         let res = Float(imperial) * 29.5735296875
         return Int(res)
     }
+    
+    let shapeLayer = CAShapeLayer()
+    
+    func createPercentageLabel () {
+        let bounds: CGRect = UIScreen.main.bounds
+        let width:CGFloat = bounds.size.width
+        let height:CGFloat = bounds.size.height
 
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+        label.center = CGPoint(x: width/2, y: height/2.5)
+        label.textAlignment = .center
+        label.text = "Percentage: "
+        label.textColor = UIColor.white
+        self.view.addSubview(label)
+
+    }
+
+    func createProgressCircle() {
+        let bounds: CGRect = UIScreen.main.bounds
+        let width:CGFloat = bounds.size.width
+        let height:CGFloat = bounds.size.height
+
+        let centerPt = CGPoint(x: width/2, y: height/2.5)
+        let circularPath = UIBezierPath(arcCenter: centerPt, radius: 130, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        
+        shapeLayer.path = circularPath.cgPath
+        shapeLayer.strokeColor = UIColor.blue.cgColor
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.lineWidth = 10
+        
+        view.layer.addSublayer(shapeLayer)
+
+    }
 
 
 }

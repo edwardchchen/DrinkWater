@@ -21,8 +21,6 @@ class AddTimeViewController : UIViewController {
     
     var timeCells : [Time] = []
 
-    @IBOutlet weak var frequencyLabel: UILabel!
-    @IBOutlet weak var slider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +31,14 @@ class AddTimeViewController : UIViewController {
         var tempCells : [Time] = []
         let startTime = defaults.string(forKey: Keys.startTime)
         let endTime = defaults.string(forKey: Keys.endTime)
+        let frequency = defaults.string(forKey: Keys.frequency)
         let cellOne = Time(time: startTime ?? "<no_time>", uniqueID: "startTimeCell")
         let cellTwo = Time(time: endTime ?? "<no_time>", uniqueID: "endTimeCell")
+        let cellThree = Time(time: (String(frequency ?? "<no_time>") + " hours per notification"), uniqueID: "frequencyCell")
         
         tempCells.append(cellOne)
         tempCells.append(cellTwo)
+        tempCells.append(cellThree)
         
         return tempCells
     }
@@ -45,23 +46,11 @@ class AddTimeViewController : UIViewController {
     
     
     func setUp() {
-        slider.setValue(Float(defaults.integer(forKey: Keys.frequency)), animated: false)
-        let sliderValue = Int(slider.value)
-        frequencyLabel.text = String(format: "Frequency: %i minutes per message", sliderValue )
         timeCells = createTimeCells()
     }
     
     
-    @IBAction func sliderMoved(_ sender: UISlider) {
-        changeFrequencyLabel()
-        defaults.set(Int(slider.value), forKey: Keys.frequency)
-    }
     
-    func changeFrequencyLabel() {
-        let sliderValue = Int(slider.value)
-        frequencyLabel.text = String(format: "Frequency: %i minutes per message", sliderValue)
-        
-    }
     
 }
 
