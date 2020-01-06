@@ -16,12 +16,12 @@ class NotificationStartTimeVC :UIViewController {
     let defaults = UserDefaults.standard
     
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var startTimeTextField: UITextField!
+    @IBOutlet weak var textField: UITextField!
     
     @IBOutlet weak var setButton: UIButton!
     
     @IBAction func setButtonPressed(_ sender: UIButton) {
-        let startTime = startTimeTextField.text
+        let startTime = textField.text
         defaults.set(startTime, forKey: Keys.startTime)
     }
     
@@ -31,7 +31,7 @@ class NotificationStartTimeVC :UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         let myString = dateFormatter.string(from: picker.date)
-        startTimeTextField.text = myString
+        textField.text = myString
     }
 
     
@@ -43,17 +43,17 @@ class NotificationStartTimeVC :UIViewController {
     }
     
     func setUpButton () {
-//        let colour = UIColor(red: 45/255, green: 158/255, blue: 234/255, alpha: 1.0)
         setButton.layer.cornerRadius = 25.0
-        setButton.layer.borderColor = UIColor.white.cgColor
+        setButton.layer.borderColor = UIColor.darkGray.cgColor
         setButton.layer.borderWidth = 2
-        setButton.tintColor = UIColor.white
+        setButton.tintColor = UIColor.darkGray
     }
     
     func setUpStyle() {
-        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "045 Loon Crest"))
-        messageLabel.textColor = .white
-        startTimeTextField.font = UIFont.boldSystemFont(ofSize: 20)
+        setUpButton()
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "026 Saint Petersburg"))
+        messageLabel.textColor = .darkGray
+        textField.font = UIFont.boldSystemFont(ofSize: 20)
         messageLabel.font = UIFont.boldSystemFont(ofSize: 20)
     }
     
@@ -66,12 +66,12 @@ class NotificationStartTimeVC :UIViewController {
 
     }
     func loadTextField () {
-        startTimeTextField.text = defaults.string(forKey: Keys.startTime)
+        textField.text = defaults.string(forKey: Keys.startTime)
     }
     
     func createPicker () {
         picker.datePickerMode = .time
-        startTimeTextField.inputView = picker
+        textField.inputView = picker
         picker.addTarget(self, action: #selector(datePickerChanged(picker:)), for: .valueChanged)
     }
     

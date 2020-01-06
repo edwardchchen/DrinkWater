@@ -62,15 +62,15 @@ class NotificationEndTimeVC : UIViewController {
     
     func setUpButton () {
         setButton.layer.cornerRadius = 25.0
-        setButton.layer.borderColor = UIColor.white.cgColor
+        setButton.layer.borderColor = UIColor.darkGray.cgColor
         setButton.layer.borderWidth = 2
-        setButton.tintColor = UIColor.white
+        setButton.tintColor = UIColor.darkGray
     }
     
     func setUpStyle() {
         setUpButton()
-        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "045 Loon Crest"))
-        messageLabel.textColor = .white
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "026 Saint Petersburg"))
+        messageLabel.textColor = .darkGray
         textField.font = UIFont.boldSystemFont(ofSize: 20)
         messageLabel.font = UIFont.boldSystemFont(ofSize: 20)
     }
