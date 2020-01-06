@@ -15,7 +15,9 @@ class UnitViewController : UIViewController {
         static let unitpref = "unitPreference"
     }
     
+    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var setButton: UIButton!
     
     let defaults = UserDefaults.standard
     
@@ -28,6 +30,7 @@ class UnitViewController : UIViewController {
         createPicker()
         createTap()
         loadUnitPreference()
+        setUpStyle()
     }
     
     @IBAction func saveUnits(_ sender: UIButton) {
@@ -59,6 +62,21 @@ class UnitViewController : UIViewController {
         picker.dataSource = self
         textField.inputView = picker
     }
+    func setUpButton () {
+        setButton.layer.cornerRadius = 25.0
+        setButton.layer.borderColor = UIColor.white.cgColor
+        setButton.layer.borderWidth = 2
+        setButton.tintColor = UIColor.white
+    }
+    
+    func setUpStyle() {
+        setUpButton()
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "059 Teen Notebook"))
+        messageLabel.textColor = .white
+        textField.font = UIFont.boldSystemFont(ofSize: 20)
+        messageLabel.font = UIFont.boldSystemFont(ofSize: 20)
+    }
+
     
     func createTap() {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))

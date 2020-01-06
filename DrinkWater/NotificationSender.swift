@@ -12,6 +12,7 @@ import UserNotifications
 
 class NotificationSender {
     var notificationmsg = "Please remember to drink water 😉"
+    var notificationTimes : [HoursAndMinutes] = []
     let title = "🚰"
     
     
@@ -29,6 +30,7 @@ class NotificationSender {
         let request = UNNotificationRequest(identifier: timeInString , content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
+    
     
     
     

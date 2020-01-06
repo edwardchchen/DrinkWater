@@ -9,14 +9,12 @@
 import UIKit
 
 class SettingViewController : UIViewController {
-    @IBOutlet weak var welcomeMsgLabel: UILabel!
     
     var settingCells : [Setting] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         settingCells = createCells()
-        displayWelcomeMsg()
     }
     
     func createCells() ->[Setting] {
@@ -37,21 +35,6 @@ class SettingViewController : UIViewController {
         return tempCells
     }
     
-    func displayWelcomeMsg() {
-        let date = Date()
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        if (hour > 18) {
-            welcomeMsgLabel.text = "Good Night!"
-        } else if (hour >= 6 && hour < 11 ) {
-            welcomeMsgLabel.text = "Good Morning!"
-        } else if ( hour >= 11 && hour <= 13) {
-            welcomeMsgLabel.text = "Good Afternoon!"
-        } else {
-            welcomeMsgLabel.text = "Good Evening!"
-        }
-    }
-    
 }
 
 extension SettingViewController : UITableViewDataSource, UITableViewDelegate {
@@ -70,5 +53,10 @@ extension SettingViewController : UITableViewDataSource, UITableViewDelegate {
         cell.setCell(setting: setting)
         return cell
     }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection
+        section: Int) -> String? {
+        return "Settings"
+    }
+
     
 }

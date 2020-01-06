@@ -19,10 +19,10 @@ class FrquencyViewController : UIViewController {
     let units = ["hours"]
     var selectedFrquency = "0.5"
     
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
     
-    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var setButton: UIButton!
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         defaults.set(selectedFrquency, forKey: Keys.frequency)
@@ -33,12 +33,29 @@ class FrquencyViewController : UIViewController {
         super.viewDidLoad()
         setUp()
         createPicker()
+        setUpStyle()
     }
     
     func setUp() {
         let frequency = defaults.string(forKey: Keys.frequency)
         textField.text = String(frequency ?? "<no_time>")  + " hours per notification"
     }
+    
+    func setUpButton () {
+        setButton.layer.cornerRadius = 25.0
+        setButton.layer.borderColor = UIColor.white.cgColor
+        setButton.layer.borderWidth = 2
+        setButton.tintColor = UIColor.white
+    }
+    
+    func setUpStyle() {
+        setUpButton()
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "045 Loon Crest"))
+        messageLabel.textColor = .white
+        textField.font = UIFont.boldSystemFont(ofSize: 20)
+        messageLabel.font = UIFont.boldSystemFont(ofSize: 20)
+    }
+
     
     
     func createPicker () {

@@ -17,6 +17,7 @@ class NotificationEndTimeVC : UIViewController {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var setButton: UIButton!
     
     let defaults = UserDefaults.standard
     
@@ -45,6 +46,7 @@ class NotificationEndTimeVC : UIViewController {
         createPicker()
         createTap()
         loadTextField()
+        setUpStyle()
         
     }
     
@@ -57,6 +59,22 @@ class NotificationEndTimeVC : UIViewController {
         textField.inputView = picker
         picker.addTarget(self, action: #selector(datePickerChanged(picker:)), for: .valueChanged)
     }
+    
+    func setUpButton () {
+        setButton.layer.cornerRadius = 25.0
+        setButton.layer.borderColor = UIColor.white.cgColor
+        setButton.layer.borderWidth = 2
+        setButton.tintColor = UIColor.white
+    }
+    
+    func setUpStyle() {
+        setUpButton()
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "045 Loon Crest"))
+        messageLabel.textColor = .white
+        textField.font = UIFont.boldSystemFont(ofSize: 20)
+        messageLabel.font = UIFont.boldSystemFont(ofSize: 20)
+    }
+
     
 }
 

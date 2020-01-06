@@ -27,6 +27,8 @@ class DailyGoalViewController : UIViewController {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var unitLabel: UILabel!
+    @IBOutlet weak var setButton: UIButton!
+    @IBOutlet weak var messageLabel: UILabel!
     
     @IBAction func setBtn(_ sender: UIButton) {
         saveDailyGoal()
@@ -40,6 +42,7 @@ class DailyGoalViewController : UIViewController {
         textField.text = String(dailyGoal)
         createTap()
         createPicker()
+        setUpStyle()
     }
     
     func correctList () -> [Int] {
@@ -87,6 +90,24 @@ class DailyGoalViewController : UIViewController {
         picker.dataSource = self
         textField.inputView = picker
     }
+    
+    func setUpButton () {
+        setButton.layer.cornerRadius = 25.0
+        setButton.layer.borderColor = UIColor.white.cgColor
+        setButton.layer.borderWidth = 2
+        setButton.tintColor = UIColor.white
+    }
+    
+    func setUpStyle() {
+        setUpButton()
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "045 Loon Crest"))
+        unitLabel.textColor = .white
+        unitLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        messageLabel.textColor = .white
+        textField.font = UIFont.boldSystemFont(ofSize: 20)
+        messageLabel.font = UIFont.boldSystemFont(ofSize: 20)
+    }
+
 
     
     func createTap() {
@@ -94,6 +115,8 @@ class DailyGoalViewController : UIViewController {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
+    
+    
 
     
 }
