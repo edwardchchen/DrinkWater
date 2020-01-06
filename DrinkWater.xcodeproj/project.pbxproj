@@ -50,10 +50,10 @@
 /* Begin PBXFileReference section */
 		3600DE5E23C1302600B15576 /* FrequencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyViewController.swift; sourceTree = "<group>"; };
 		360F091123B43727002C90BF /* DrinkWater.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DrinkWater.entitlements; sourceTree = "<group>"; };
-		360F091D23B43B8D002C90BF /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/Main.strings"; sourceTree = "<group>"; };
-		360F091E23B43B8D002C90BF /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		3628FBA123B196880006FC7F /* NotificationSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSender.swift; sourceTree = "<group>"; };
 		362D1DCE23C28B5400EAE224 /* HoursAndMinutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursAndMinutes.swift; sourceTree = "<group>"; };
+		362D1DD023C2FCE100EAE224 /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/Main.strings"; sourceTree = "<group>"; };
+		362D1DD123C2FCE200EAE224 /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		365F3B0C23BC5C1600956EF4 /* NotificationEndTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationEndTimeVC.swift; sourceTree = "<group>"; };
 		366A116C23AD699F004316FB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		366A11A823AD96EE004316FB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -407,7 +407,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				36D5D8AF23AC8781007B1187 /* Base */,
-				360F091D23B43B8D002C90BF /* zh-Hant-TW */,
+				362D1DD023C2FCE100EAE224 /* zh-Hant-TW */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -416,7 +416,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				36D5D8B423AC8782007B1187 /* Base */,
-				360F091E23B43B8D002C90BF /* zh-Hant-TW */,
+				362D1DD123C2FCE200EAE224 /* zh-Hant-TW */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
