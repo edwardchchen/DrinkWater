@@ -15,9 +15,9 @@ class FrquencyViewController : UIViewController {
     }
     
     let defaults = UserDefaults.standard
-    let pickerData = ["0.5","1","1.5","2","2.5","3.0","3.5","4.0"]
+    let pickerData = ["1","2","3","4"]
     let units = ["hours"]
-    var selectedFrquency = "0.5"
+    var selectedFrquency = "1"
     
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
@@ -26,7 +26,9 @@ class FrquencyViewController : UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         defaults.set(selectedFrquency, forKey: Keys.frequency)
-        
+        let ns = NotificationSender()
+        ns.removeAllNotification()
+        ns.addNotification()
     }
     
     override func viewDidLoad() {

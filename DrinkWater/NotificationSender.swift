@@ -14,13 +14,25 @@ class NotificationSender {
     var notificationmsg = "Please remember to drink water 😉"
     var notificationTimes : [HoursAndMinutes] = []
     let title = "🚰"
+    let defaults = UserDefaults.standard
     
-    
+    func addNotification(){
+        var startHR = defaults.integer(forKey: "startHR")
+        let endHR = defaults.integer(forKey: "endHR")
+        let frequency = defaults.string(forKey: "frequency")
+        let freqInt = Int(frequency ?? "1") ?? 1
+        while(startHR<endHR){
+            constructNotification(hour: startHR, minute: 0)
+            startHR += freqInt
+            print(startHR)
+        }
+        
+        
+    }
     func constructNotification(hour : Int, minute : Int ) {
         let content = UNMutableNotificationContent()
         var date = DateComponents()
         let timeInString = String(hour) + String(minute)
-        print(timeInString)
         content.title = title
         content.body = notificationmsg
         date.hour = hour

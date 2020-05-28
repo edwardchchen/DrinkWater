@@ -23,6 +23,11 @@ class NotificationStartTimeVC :UIViewController {
     @IBAction func setButtonPressed(_ sender: UIButton) {
         let startTime = textField.text
         defaults.set(startTime, forKey: Keys.startTime)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH"
+        let startHR = dateFormatter.string(from: picker.date)
+        let startHRInt = Int(startHR)
+        defaults.set(startHRInt,forKey: "startHR")
     }
     
     var picker = UIDatePicker()

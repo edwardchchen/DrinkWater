@@ -105,6 +105,7 @@ class ViewController: UIViewController {
         
         addButton.layer.borderWidth = 2
         addButton.layer.borderColor = UIColor.white.cgColor
+        addButton.backgroundColor = .white
 
         addButton.layer.cornerRadius = 25.0
         
@@ -235,11 +236,6 @@ class ViewController: UIViewController {
 
         shapeLayer.strokeEnd = 0
         
-        
-        
-        
-//        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapToLoad)))
-        
         view.layer.addSublayer(trackLayer)
         view.layer.addSublayer(shapeLayer)
 
@@ -250,7 +246,7 @@ class ViewController: UIViewController {
         let percentage = Float(todayTotal)/Float(todayGoalVolume)
         print(percentage)
         basicAnimation.toValue = percentage
-        basicAnimation.duration = 1
+        basicAnimation.duration = 0.65
         basicAnimation.fillMode = .forwards
         basicAnimation.isRemovedOnCompletion = false
         shapeLayer.add(basicAnimation, forKey: "basicAnimation")

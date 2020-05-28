@@ -23,6 +23,12 @@ class NotificationEndTimeVC : UIViewController {
     
     @IBAction func setButtonPressed(_ sender: UIButton) {
         defaults.set(textField.text, forKey: Keys.endTime)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH"
+        let endHR = dateFormatter.string(from: picker.date)
+        let endHRInt = Int(endHR)
+        defaults.set(endHRInt,forKey: "endHR")
+
     }
     
     override func viewDidLoad() {
